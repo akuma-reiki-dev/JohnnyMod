@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 1745971094
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: johnnyassets
+      Dependencies: {}
