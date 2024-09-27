@@ -10,9 +10,17 @@ namespace JohnnyMod.Survivors.Johnny
 
             Modules.Content.AddEntityState(typeof(MistFiner));
 
-            Modules.Content.AddEntityState(typeof(Roll));
+            Modules.Content.AddEntityState(typeof(StepDash));
+
+            Modules.Content.AddEntityState(typeof(MistFinerDash));
+
+            Modules.Content.AddEntityState(typeof(Vault));
 
             Modules.Content.AddEntityState(typeof(Deal));
+
+            Modules.Content.AddEntityState(typeof(RomanCancel));
+
+            Modules.Content.AddEntityState(typeof(RomanIdle));
         }
     }
 }

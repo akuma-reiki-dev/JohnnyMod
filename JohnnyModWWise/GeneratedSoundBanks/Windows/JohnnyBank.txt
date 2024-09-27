@@ -1,0 +1,45 @@
+Event	ID	Name			Wwise Object Path	Notes
+	216919655	PlayMistFinerLvlUp			\Default Work Unit\PlayMistFinerLvlUp	
+	662274973	PlayDeal			\Default Work Unit\PlayDeal	
+	1044325701	PlayCoinFlip			\Default Work Unit\PlayCoinFlip	
+	1455317230	PlayRC			\Default Work Unit\PlayRC	
+	1836869611	PlaySelectNoise			\Default Work Unit\PlaySelectNoise	
+	2149925004	PlaySheath			\Default Work Unit\PlaySheath	
+	2967634857	PlayLeap			\Default Work Unit\PlayLeap	
+	3023499623	PlayWinVoice			\Default Work Unit\PlayWinVoice	
+	3575152198	PlayMistFiner			\Default Work Unit\PlayMistFiner	
+	3883459230	PlayCardPop			\Default Work Unit\PlayCardPop	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1693404274	MFLevel			\Default Work Unit\MFLevel	
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
+	3695994288	Volume_Master			\Default Work Unit\Volume_Master	
+
+Effect plug-ins	ID	Name	Type				Notes
+	776837744	Born_In_1950	Wwise Parametric EQ			
+	1979096043	VoiceEQ2	Wwise Parametric EQ			
+	2135883084	Nasty_Radio	Wwise Peak Limiter			
+	2667647788	Single_Band_1Khz_Wide	Wwise Parametric EQ			
+	3539075171	VoiceEQ	Wwise Parametric EQ			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	23319721	SE_BTL_JHN_02 Mist Finer Meaty Sound	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_02 Mist Finer Meaty Sound_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\MistFiner\SE_BTL_JHN_02 Mist Finer Meaty Sound		6123
+	98100172	SE_BTL_JHN_03 MF Boom	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_03 MF Boom_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\MistFiner\SE_BTL_JHN_03 MF Boom		7660
+	141743249	do this with style	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\do this with style_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\do this with style		20268
+	169121957	lucky johnny gave a chance	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\lucky johnny gave a chance_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\lucky johnny gave a chance		54148
+	181430493	SE_BTL_JHN_07 Vault and Ensenga Jump	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_07 Vault and Ensenga Jump_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_07 Vault and Ensenga Jump		7226
+	332525918	handsome guy wins	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\handsome guy wins_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\WinVoices\handsome guy wins		44157
+	409897045	wanna be a hero	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\wanna be a hero_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\wanna be a hero		56096
+	452917109	SE_BTL_JHN_04 Deal	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_04 Deal_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_04 Deal		4799
+	501115062	SE_BTL_JHN_01 Sheath	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_01 Sheath_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_01 Sheath		2696
+	502831786	SE_BTL_CMN_RC_Blue	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_CMN_RC_Blue_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_CMN_RC_Blue		18763
+	602182792	im perfect	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\im perfect_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\WinVoices\im perfect		56928
+	638523529	make it snappy	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\make it snappy_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\make it snappy		17490
+	685031763	takin a gamble	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\takin a gamble_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\takin a gamble		47359
+	791020048	lady luck loves a gambler	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\lady luck loves a gambler_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\lady luck loves a gambler		48915
+	894107870	keep half the pop waiting	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\keep half the pop waiting_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\keep half the pop waiting		67102
+	899759526	SE_BTL_JHN_06 CardPop	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_06 CardPop_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_06 CardPop		11153
+	966994400	curtain calls	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\curtain calls_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\WinVoices\curtain calls		31286
+	1006256319	SE_BTL_JHN_00 MF Light Slash	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_00 MF Light Slash_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\MistFiner\SE_BTL_JHN_00 MF Light Slash		3128
+	1062112498	CoinShing	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\CoinShing_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\CoinShing		7079
+

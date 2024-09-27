@@ -1,17 +1,19 @@
 ManifestFileVersion: 0
-CRC: 1576619162
+CRC: 1928887689
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c27f8c7a9b7e4959d3d8de20a3716a13
+    Hash: 9a1bc6039b4131c958819a056c60af61
   TypeTreeHash:
     serializedVersion: 2
-    Hash: bcff072c8bf8eaaabbc9a68441c262d3
+    Hash: bfe7066a76e7f53523e6bb31f435c296
 HashAppended: 0
 ClassTypes:
 - Class: 1
   Script: {instanceID: 0}
 - Class: 4
+  Script: {instanceID: 0}
+- Class: 20
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -42,7 +44,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 306635731, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: 678291247, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+- Class: 114
+  Script: {fileID: 1790887305, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+- Class: 114
   Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
   Script: {fileID: -197296741, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -55,6 +67,8 @@ ClassTypes:
   Script: {fileID: -202159943, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1792105662, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -598719375, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1699741063, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
@@ -72,8 +86,18 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -1895344032, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: 816898038, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -130519023, guid: 2b6c926553287666f24ffd5af5ba21cb, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 128
   Script: {instanceID: 0}
 - Class: 135
   Script: {instanceID: 0}
@@ -89,182 +113,377 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 - Class: 319
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: AK.Wwise.Unity.MonoBehaviour
+  ClassName: AkGameObjListenerList
+- AssemblyName: AK.Wwise.Unity.MonoBehaviour
+  ClassName: AkGameObjPositionOffsetData
 - AssemblyName: RoR2
   ClassName: ChildLocator/NameTransformPair
 - AssemblyName: RoR2
   ClassName: EntityStates.SerializableEntityStateType
 - AssemblyName: RoR2
+  ClassName: RoR2.DamageTypeCombo
+- AssemblyName: RoR2
   ClassName: RoR2.SkillLocator/PassiveSkill
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphPairAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphValueRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
 - AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.PersistentCallGroup
 - AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.CoreModule
   ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.RectOffset
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkHash128
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
+- Assets/JohnnyAssets/Animation/maskLeftArm.mask
 - Assets/HenryAssets/HenryBundle/Animation/clips/DefaultPose.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_01_Normal.png
+- Assets/JohnnyAssets/VFX/Material/RC/RCBlast.mat
 - Assets/HenryAssets/HenryBundle/Icons/texMasteryAchievement.png
-- Assets/JohnnyAssets/Materials/JohnnyCardBlack.mat
+- Assets/JohnnyAssets/Animation/clips/AimPitch.anim
+- Assets/JohnnyAssets/VFX/Material/jhn_guard_low00.tga
 - Assets/HenryAssets/HenryBundle/Materials/matRebellion.mat
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_03_Normal.png
 - Assets/HenryAssets/HenryBundle/Mesh/meshNeoCoat.mesh
 - Assets/HenryAssets/HenryBundle/Animation/clips/Slash2.anim
-- Assets/HenryAssets/HenryBundle/Mesh/meshVergil.mesh
-- Assets/HenryAssets/HenryBundle/Animation/clips/Descend.anim
-- Assets/HenryAssets/HenryBundle/Icons/texHenryAchievement.png
-- Assets/HenryAssets/HenryBundle/Icons/texSpecialIcon.png
-- Assets/HenryAssets/HenryBundle/VFX/JohnnyFistSwingEffect.prefab
-- Assets/HenryAssets/HenryBundle/Animation/clips/Idle.anim
+- Assets/JohnnyAssets/Textures/UI/texVoidSurvivorNib.png
+- Assets/JohnnyAssets/Animation/maskGesture.mask
+- Assets/JohnnyAssets/Textures/texMistFinderDashIcon nuhuh.png
+- Assets/JohnnyAssets/Animation/clips/DescendFast.anim
 - Assets/HenryAssets/HenryBundle/Animation/clips/SprintR.anim
+- Assets/HenryAssets/HenryBundle/Icons/texUtilityIcon hen.png
 - Assets/JohnnyAssets/Prefabs/JohnCardBlack.prefab
-- Assets/HenryAssets/HenryBundle/Animation/clips/WalkB.anim
-- Assets/HenryAssets/HenryBundle/Animation/animHenryMenu.controller
-- Assets/HenryAssets/HenryBundle/Animation/maskImpact.mask
-- Assets/HenryAssets/HenryBundle/Icons/texUtilityIcon.png
 - Assets/HenryAssets/HenryBundle/Animation/clips/ShootGun.anim
-- Assets/HenryAssets/HenryBundle/Mesh/meshRebellion.mesh
-- Assets/HenryAssets/HenryBundle/Icons/texStingerIcon.png
 - Assets/HenryAssets/HenryBundle/Icons/texHenryIcon.png
-- Assets/HenryAssets/HenryBundle/Mesh/meshHenryAlt.mesh
-- Assets/HenryAssets/HenryBundle/Textures/texBazooka.png
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matDust.mat
+- Assets/JohnnyAssets/Animation/Anims/Idle.anim
 - Assets/HenryAssets/HenryBundle/Textures/texHenry.png
 - Assets/HenryAssets/HenryBundle/Animation/clips/IdleAdditive.anim
-- Assets/HenryAssets/HenryBundle/HenryBombGhost.prefab
-- Assets/HenryAssets/HenryBundle/Animation/clips/WalkR.anim
-- Assets/HenryAssets/HenryBundle/Materials/matBoxingGlove.mat
 - Assets/HenryAssets/HenryBundle/VFX/Mesh/meshBoxingGlove.mesh
+- Assets/HenryAssets/HenryBundle/Animation/clips/WalkR.anim
 - Assets/HenryAssets/HenryBundle/VFX/HenryBazookaMuzzleFlash.prefab
 - Assets/HenryAssets/HenryBundle/Textures/texShotgun.png
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texSmoke.png
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matPunchEffect.mat
 - Assets/HenryAssets/HenryBundle/Icons/texBazookaOutIcon.png
+- Assets/JohnnyAssets/Animation/Anims/MistFinerCharge.anim
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texSlash.png
-- Assets/HenryAssets/HenryBundle/Mesh/MeshHenryGun.mesh
-- Assets/HenryAssets/HenryBundle/JohnnyDisplay.prefab
+- Assets/JohnnyAssets/VFX/Material/cardSlashes.mat
+- Assets/HenryAssets/HenryBundle/HenryDisplay.prefab
+- Assets/JohnnyAssets/Animation/Anims/MistFinerIntro.anim
 - Assets/HenryAssets/HenryBundle/Materials/matDante.mat
-- Assets/HenryAssets/HenryBundle/Textures/texHenryJediEmission.png
-- Assets/HenryAssets/HenryBundle/VFX/Mesh/meshSwing.asset
-- Assets/HenryAssets/HenryBundle/VFX/BombExplosionEffect.prefab
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texPunchImpact.png
+- Assets/JohnnyAssets/Textures/texSpecialIcon.png
 - Assets/HenryAssets/HenryBundle/VFX/JohnnySwordSwingEffect.prefab
-- Assets/HenryAssets/HenryBundle/Animation/clips/RestIdleIn.anim
-- Assets/HenryAssets/HenryBundle/Icons/texPistolIcon.png
-- Assets/HenryAssets/HenryBundle/Icons/texPrimaryIcon.png
 - Assets/HenryAssets/HenryBundle/Materials/matHenryNeo.mat
 - Assets/HenryAssets/HenryBundle/Mesh/meshHenry.mesh
-- Assets/HenryAssets/HenryBundle/Icons/texPassiveIcon.png
-- Assets/HenryAssets/HenryBundle/Materials/matJohnnyAlt.mat
-- Assets/HenryAssets/HenryBundle/Mesh/meshDanteCoat.mesh
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texDust.png
+- Assets/JohnnyAssets/Animation/Anims/Vault.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matSwingEffect.mat
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texDust.png
+- Assets/JohnnyAssets/Animation/clips/RestIdle.anim
+- Assets/JohnnyAssets/Animation/clips/SprintF.anim
+- Assets/HenryAssets/HenryBundle/Mesh/meshDanteCoat.mesh
 - Assets/HenryAssets/HenryBundle/Animation/clips/DescendFast.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matPunchImpact.mat
+- Assets/JohnnyAssets/Animation/clips/Jump.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matFire.mat
-- Assets/HenryAssets/HenryBundle/VFX/JohnnyBazookaMuzzleFlash.prefab
+- Assets/JohnnyAssets/VFX/Material/xrd/jhn_guard_low00.tga
+- Assets/JohnnyAssets/VFX/Material/cardBoom.mat
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texFire.tga
-- Assets/HenryAssets/HenryBundle/Materials/matHenry.mat
+- Assets/JohnnyAssets/VFX/Material/jhn_zanzo_mask.tga
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matTrail.mat
 - Assets/HenryAssets/HenryBundle/Materials/matJohnnyJedi.mat
-- Assets/HenryAssets/HenryBundle/Textures/texHenryDanteEmission.png
-- Assets/HenryAssets/HenryBundle/Textures/texHenryVergil.png
+- Assets/JohnnyAssets/Animation/clips/Slash2.anim
+- Assets/JohnnyAssets/VFX/Material/jhn_kira02.tga
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texLightning.tif
-- Assets/HenryAssets/HenryBundle/Animation/clips/Roll.anim
+- Assets/JohnnyAssets/VFX/Material/jhn_mist_slash08.tga
 - Assets/HenryAssets/HenryBundle/Materials/matShotgun.mat
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matPunchImpactShadow.mat
+- Assets/JohnnyAssets/VFX/Material/xrd/circle_kira04.tga
 - Assets/HenryAssets/HenryBundle/VFX/FistBarrageEffect.prefab
-- Assets/HenryAssets/HenryBundle/Icons/texShotgunIcon.png
 - Assets/HenryAssets/HenryBundle/Animation/clips/IdleIn.anim
 - Assets/HenryAssets/HenryBundle/Icons/texBoxingGlovesIcon.png
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texFistSwing.png
-- Assets/HenryAssets/HenryBundle/Mesh/meshYamato.mesh
-- Assets/HenryAssets/HenryBundle/Animation/clips/AimPitch.anim
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matEmbers.mat
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matSlash.mat
-- Assets/HenryAssets/HenryBundle/Animation/clips/Slash1.anim
-- Assets/HenryAssets/HenryBundle/Materials/matBazookaRocket.mat
-- Assets/HenryAssets/HenryBundle/Animation/clips/MenuIdle.anim
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texPunchImpact.png
-- Assets/HenryAssets/HenryBundle/Icons/texSecondaryIcon.png
+- Assets/JohnnyAssets/Animation/animJohnnyMenu.controller
+- Assets/JohnnyAssets/Materials/CardGlow.mat
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texSwingEffect.png
-- Assets/HenryAssets/HenryBundle/Animation/maskAimYaw.mask
-- Assets/JohnnyAssets/Textures/Johnny Card Black.png
-- Assets/HenryAssets/HenryBundle/Animation/maskAimBazooka.mask
+- Assets/HenryAssets/HenryBundle/Animation/clips/Slash1.anim
+- Assets/JohnnyAssets/VFX/Material/RC/clock.tga
+- Assets/JohnnyAssets/VFX/mistFinerEffectLvl3.prefab
+- Assets/JohnnyAssets/VFX/Material/xrd/bakusmoke01.tga
 - Assets/HenryAssets/HenryBundle/Icons/texBazookaIconScepter.png
-- Assets/HenryAssets/HenryBundle/mdlJohnny.prefab
+- Assets/JohnnyAssets/Materials/mtrlJohnSoftMastery.mat
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_Normal.png
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_01_BaseMap.png
+- Assets/HenryAssets/HenryBundle/mdlHenry.prefab
 - Assets/HenryAssets/HenryBundle/Materials/matHenryAlt.mat
 - Assets/HenryAssets/HenryBundle/Animation/clips/Jump.anim
 - Assets/HenryAssets/HenryBundle/Mesh/meshPistol.mesh
 - Assets/HenryAssets/HenryBundle/Icons/texUziIcon.png
 - Assets/HenryAssets/HenryBundle/Animation/maskLeftArm.mask
 - Assets/HenryAssets/HenryBundle/Animation/clips/SprintF.anim
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matRipple.mat
-- Assets/HenryAssets/HenryBundle/Materials/matJohnnyNeo.mat
-- Assets/HenryAssets/HenryBundle/Animation/maskAimPitch.mask
-- Assets/JohnnyAssets/Materials/JohnnyCardWhite.mat
+- Assets/JohnnyAssets/VFX/Material/jhn_500cs_speedline.tga
+- Assets/JohnnyAssets/Prefabs/JohnnyDisplay.prefab
 - Assets/HenryAssets/HenryBundle/Mesh/meshDante.mesh
 - Assets/HenryAssets/HenryBundle/Animation/clips/RestIdle.anim
-- Assets/JohnnyAssets/Prefabs/JohnCardWhite.prefab
-- Assets/HenryAssets/HenryBundle/Materials/matVergil.mat
-- Assets/HenryAssets/HenryBundle/VFX/JohnnyDustEffect.prefab
-- Assets/HenryAssets/HenryBundle/Materials/matJohnny.mat
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matFistSwing.mat
-- Assets/HenryAssets/HenryBundle/Animation/clips/SprintL.anim
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matAnimeShapes.mat
+- Assets/JohnnyAssets/VFX/Material/xrd/skelton.tga
 - Assets/HenryAssets/HenryBundle/VFX/Mesh/meshPunchShockwave.mesh
+- Assets/JohnnyAssets/Animation/Anims/MistFinerWalk.anim
+- Assets/JohnnyAssets/Animation/clips/WalkL.anim
+- Assets/JohnnyAssets/VFX/Material/RC/hitanim04.tga
 - Assets/HenryAssets/HenryBundle/HenryBazookaRocketGhost.prefab
-- Assets/HenryAssets/HenryBundle/Animation/animHenry.controller
-- Assets/HenryAssets/HenryBundle/Mesh/meshUzi.mesh
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_03_BaseMap.png
+- Assets/JohnnyAssets/VFX/CardPop.prefab
 - Assets/HenryAssets/HenryBundle/VFX/ImpactHenryPunch.prefab
-- Assets/HenryAssets/HenryBundle/Animation/clips/ThrowBomb.anim
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texEmbers.png
+- Assets/JohnnyAssets/Animation/clips/SprintL.anim
+- Assets/JohnnyAssets/Animation/Anims/Jump.anim
 - Assets/HenryAssets/HenryBundle/Materials/matBazooka.mat
 - Assets/HenryAssets/HenryBundle/Textures/texBoxingGlove.png
+- Assets/JohnnyAssets/Animation/Anims/StepDash.anim
+- Assets/JohnnyAssets/VFX/Material/noutou.tga
 - Assets/JohnnyAssets/FBX/Johnny Card.fbx
-- Assets/HenryAssets/HenryBundle/VFX/Materials/matHitSparkPunch.mat
-- Assets/HenryAssets/HenryBundle/Animation/maskGesture.mask
-- Assets/HenryAssets/HenryBundle/Animation/clips/MenuIdleIn.anim
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texHenrySwing2.png
-- Assets/HenryAssets/HenryBundle/Materials/matRoy.mat
 - Assets/HenryAssets/HenryBundle/VFX/HenryDustEffect.prefab
+- Assets/JohnnyAssets/VFX/Material/RC/hitanim01.tga
 - Assets/HenryAssets/HenryBundle/Icons/texMainSkin.png
-- Assets/HenryAssets/HenryBundle/VFX/JohnnyBazookaExplosionEffect.prefab
+- Assets/JohnnyAssets/VFX/RomanCancel.prefab
+- Assets/JohnnyAssets/Animation/Anims/RunToIdle.anim
 - Assets/HenryAssets/HenryBundle/Icons/texGrandMasteryAchievement.png
 - Assets/HenryAssets/HenryBundle/Textures/texHenryNeo.png
 - Assets/HenryAssets/HenryBundle/Icons/texVergilAchievement.png
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texHitSpark.png
 - Assets/HenryAssets/HenryBundle/Animation/maskBandana.mask
 - Assets/HenryAssets/HenryBundle/VFX/HenryFistSwingEffect.prefab
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texRipple.png
-- Assets/HenryAssets/HenryBundle/Materials/matHenryJedi.mat
+- Assets/JohnnyAssets/Animation/Anims/Swing2.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_BaseMap.png
+- Assets/JohnnyAssets/Animation/Anims/Swing1.anim
+- Assets/JohnnyAssets/Materials/mtrlJohnHard.mat
+- Assets/JohnnyAssets/Textures/texMistFinderDashIcon.png
 - Assets/HenryAssets/HenryBundle/Animation/clips/WalkL.anim
-- Assets/HenryAssets/HenryBundle/VFX/HenryBazookaExplosionEffect.prefab
+- Assets/JohnnyAssets/Animation/Anims/RomanCancel.anim
+- Assets/JohnnyAssets/Animation/clips/Slash1.anim
+- Assets/JohnnyAssets/Animation/Anims/AimPitch.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matSwingShadow.mat
 - Assets/HenryAssets/HenryBundle/Animation/clips/Ascend.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matHitSpark.mat
+- Assets/JohnnyAssets/VFX/mfLevelUp.prefab
 - Assets/HenryAssets/HenryBundle/Mesh/meshHenryNeo.mesh
-- Assets/HenryAssets/HenryBundle/VFX/HenrySwordSwingEffect.prefab
+- Assets/JohnnyAssets/Animation/Anims/CSS_Intro.anim
+- Assets/JohnnyAssets/Animation/Anims/MistFinerFire.anim
 - Assets/HenryAssets/HenryBundle/Mesh/meshHenrySwordAlt.mesh
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matHenrySwing2.mat
+- Assets/JohnnyAssets/Animation/clips/Ascend.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_Emissive.png
+- Assets/HenryAssets/HenryBundle/VFX/ImpactHenrySlash.prefab
+- Assets/HenryAssets/HenryBundle/Textures/texHenryAlt.png
+- Assets/JohnnyAssets/Animation/clips/MenuIdle.anim
+- Assets/JohnnyAssets/Animation/clips/SprintR.anim
+- Assets/JohnnyAssets/VFX/Material/RC/cmn_windring.tga
+- Assets/JohnnyAssets/Animation/clips/Descend.anim
+- Assets/HenryAssets/HenryBundle/Icons/texBazookaFireIcon.png
+- Assets/JohnnyAssets/Materials/mtrlJohnWeap.mat
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_01_MaskMap.png
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_Emissive.png
+- Assets/HenryAssets/HenryBundle/VFX/ImpactJohnnyPunch.prefab
+- Assets/JohnnyAssets/VFX/Material/cardFlash.mat
+- Assets/HenryAssets/HenryBundle/Animation/clips/AimYaw.anim
+- Assets/HenryAssets/HenryBundle/Mesh/meshHenrySword.mesh
+- Assets/HenryAssets/HenryBundle/Icons/texDanteAchievement.png
+- Assets/JohnnyAssets/FBX/RoR_Johnny_Anims.fbx
+- Assets/JohnnyAssets/Materials/mtrlJohnSoft.mat
+- Assets/JohnnyAssets/VFX/Material/jhn_zan02.tga
+- Assets/JohnnyAssets/VFX/Material/mistFiner.mat
+- Assets/JohnnyAssets/Animation/clips/IdleIn.anim
+- Assets/JohnnyAssets/Materials/JohnnyCardBlack.mat
+- Assets/JohnnyAssets/Textures/texPrimaryIcon.png
+- Assets/JohnnyAssets/VFX/Material/RC/hitanim06.tga
+- Assets/HenryAssets/HenryBundle/Mesh/meshVergil.mesh
+- Assets/HenryAssets/HenryBundle/Animation/clips/Descend.anim
+- Assets/HenryAssets/HenryBundle/Icons/texHenryAchievement.png
+- Assets/HenryAssets/HenryBundle/Icons/texSpecialIconbom.png
+- Assets/HenryAssets/HenryBundle/VFX/JohnnyFistSwingEffect.prefab
+- Assets/HenryAssets/HenryBundle/Animation/clips/Idle.anim
+- Assets/HenryAssets/HenryBundle/Animation/clips/WalkB.anim
+- Assets/HenryAssets/HenryBundle/Mesh/meshRebellion.mesh
+- Assets/HenryAssets/HenryBundle/Animation/animHenryMenu.controller
+- Assets/JohnnyAssets/VFX/sheathPop.prefab
+- Assets/HenryAssets/HenryBundle/Animation/maskImpact.mask
+- Assets/JohnnyAssets/VFX/Material/RC/cmn_wind00.tga
+- Assets/JohnnyAssets/Animation/clips/WalkF.anim
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matPunchEffect.mat
+- Assets/JohnnyAssets/Animation/clips/MenuIdleIn.anim
+- Assets/HenryAssets/HenryBundle/Icons/texStingerIcon.png
+- Assets/HenryAssets/HenryBundle/Textures/texBazooka.png
+- Assets/HenryAssets/HenryBundle/Mesh/meshHenryAlt.mesh
+- Assets/JohnnyAssets/FBX/ROR_Johnny.fbx
+- Assets/JohnnyAssets/Animation/clips/ShootGun.anim
+- Assets/JohnnyAssets/VFX/Material/jhn_step_mask.tga
+- Assets/HenryAssets/HenryBundle/HenryBombGhost.prefab
+- Assets/HenryAssets/HenryBundle/Materials/matBoxingGlove.mat
+- Assets/JohnnyAssets/UI/JohnnyTensionGauge.prefab
+- Assets/JohnnyAssets/VFX/Material/cardSlashinhg.mat
+- Assets/JohnnyAssets/Animation/Anims/RunF.anim
+- Assets/JohnnyAssets/Animation/clips/WalkR.anim
+- Assets/JohnnyAssets/Animation/clips/Idle.anim
+- Assets/HenryAssets/HenryBundle/Mesh/MeshHenryGun.mesh
+- Assets/JohnnyAssets/VFX/Material/xrd/circle_kira03.tga
+- Assets/JohnnyAssets/Textures/texUtilityVault.png
+- Assets/HenryAssets/HenryBundle/Textures/texHenryJediEmission.png
+- Assets/HenryAssets/HenryBundle/VFX/BombExplosionEffect.prefab
+- Assets/HenryAssets/HenryBundle/VFX/Mesh/meshSwing.asset
+- Assets/JohnnyAssets/UI/TensionGaugeAnimCTRL.controller
+- Assets/JohnnyAssets/Materials/mtrlJohnHardMastery.mat
+- Assets/HenryAssets/HenryBundle/Animation/clips/RestIdleIn.anim
+- Assets/HenryAssets/HenryBundle/Icons/texPistolIcon.png
+- Assets/HenryAssets/HenryBundle/Icons/texPrimaryIcon sw.png
+- Assets/JohnnyAssets/VFX/Material/jhn_zan03.tga
+- Assets/HenryAssets/HenryBundle/Icons/texPassiveIcon.png
+- Assets/HenryAssets/HenryBundle/Materials/matJohnnyAlt.mat
+- Assets/JohnnyAssets/Animation/Anims/Ascend.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_01_Normal.png
+- Assets/JohnnyAssets/VFX/Material/RC/RCWind.mat
+- Assets/JohnnyAssets/VFX/Material/RC/clock_hari.tga
+- Assets/JohnnyAssets/VFX/Material/matSmoke 1.mat
+- Assets/HenryAssets/HenryBundle/VFX/JohnnyBazookaMuzzleFlash.prefab
+- Assets/HenryAssets/HenryBundle/Materials/matHenry.mat
+- Assets/JohnnyAssets/Animation/Anims/AimYaw.anim
+- Assets/HenryAssets/HenryBundle/Textures/texHenryDanteEmission.png
+- Assets/HenryAssets/HenryBundle/Textures/texHenryVergil.png
+- Assets/JohnnyAssets/Animation/Anims/REF.anim
+- Assets/HenryAssets/HenryBundle/Animation/clips/Roll.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_Normal.png
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matPunchImpactShadow.mat
+- Assets/JohnnyAssets/Animation/clips/ThrowBomb.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_MaskMap.png
+- Assets/HenryAssets/HenryBundle/Icons/texShotgunIcon.png
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texFistSwing.png
+- Assets/JohnnyAssets/VFX/Material/xrd/circle_kira01.tga
+- Assets/HenryAssets/HenryBundle/Mesh/meshYamato.mesh
+- Assets/HenryAssets/HenryBundle/Animation/clips/AimPitch.anim
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matEmbers.mat
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matSlash.mat
+- Assets/JohnnyAssets/Animation/animJohnny.controller
+- Assets/HenryAssets/HenryBundle/Materials/matBazookaRocket.mat
+- Assets/HenryAssets/HenryBundle/Animation/clips/MenuIdle.anim
+- Assets/JohnnyAssets/Textures/Johnny Card Black.png
+- Assets/JohnnyAssets/VFX/mistFinerEffectLvl2.prefab
+- Assets/HenryAssets/HenryBundle/Icons/texSecondaryIconGun.png
+- Assets/JohnnyAssets/Prefabs/mdlJohnny.prefab
+- Assets/JohnnyAssets/Animation/clips/WalkB.anim
+- Assets/HenryAssets/HenryBundle/Animation/maskAimYaw.mask
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_BaseMap.png
+- Assets/HenryAssets/HenryBundle/Animation/maskAimBazooka.mask
+- Assets/JohnnyAssets/Animation/clips/Roll.anim
+- Assets/JohnnyAssets/VFX/Material/sheathPop.mat
+- Assets/JohnnyAssets/VFX/Material/xrd/lineanim04.tga
+- Assets/JohnnyAssets/Animation/maskImpact.mask
+- Assets/JohnnyAssets/Animation/clips/LightImpact.anim
+- Assets/JohnnyAssets/Animation/clips/IdleAdditive.anim
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matRipple.mat
+- Assets/JohnnyAssets/Prefabs/JohnCardWhite EVIL.prefab
+- Assets/HenryAssets/HenryBundle/Materials/matJohnnyNeo.mat
+- Assets/HenryAssets/HenryBundle/Animation/maskAimPitch.mask
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_MaskMap.png
+- Assets/JohnnyAssets/Materials/JohnnyCardWhite.mat
+- Assets/JohnnyAssets/Animation/clips/AimYaw.anim
+- Assets/JohnnyAssets/Animation/clips/DefaultPose.anim
+- Assets/HenryAssets/HenryBundle/Materials/matVergil.mat
+- Assets/JohnnyAssets/Animation/Anims/Swing3.anim
+- Assets/HenryAssets/HenryBundle/VFX/JohnnyDustEffect.prefab
+- Assets/JohnnyAssets/Textures/texUtilityIcon.png
+- Assets/HenryAssets/HenryBundle/Materials/matJohnny.mat
+- Assets/HenryAssets/HenryBundle/Animation/clips/SprintL.anim
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matAnimeShapes.mat
+- Assets/JohnnyAssets/VFX/Material/cardFlashbang.mat
+- Assets/JohnnyAssets/Animation/Anims/LightImpact.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_03_MaskMap.png
+- Assets/JohnnyAssets/VFX/Material/jhn_mist_slash_kira02.tga
+- Assets/HenryAssets/HenryBundle/Animation/animHenry.controller
+- Assets/HenryAssets/HenryBundle/Mesh/meshUzi.mesh
+- Assets/JohnnyAssets/Animation/Anims/Descend.anim
+- Assets/JohnnyAssets/Textures/texSecondaryIcon.png
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_01_MaskMap.png
+- Assets/HenryAssets/HenryBundle/Animation/clips/ThrowBomb.anim
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texEmbers.png
+- Assets/HenryAssets/HenryBundle/VFX/Materials/matHitSparkPunch.mat
+- Assets/JohnnyAssets/Animation/maskAimYaw.mask
+- Assets/JohnnyAssets/VFX/Material/RC/RCClock.mat
+- Assets/JohnnyAssets/Animation/Anims/Deal.anim
+- Assets/JohnnyAssets/Prefabs/JohnCardWhiteGhost.prefab
+- Assets/HenryAssets/HenryBundle/Animation/maskGesture.mask
+- Assets/JohnnyAssets/VFX/Material/xrd/circle_kira02.tga
+- Assets/HenryAssets/HenryBundle/Animation/clips/MenuIdleIn.anim
+- Assets/JohnnyAssets/Prefabs/JohnCardWhite.prefab
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texHenrySwing2.png
+- Assets/HenryAssets/HenryBundle/Materials/matRoy.mat
+- Assets/HenryAssets/HenryBundle/VFX/JohnnyBazookaExplosionEffect.prefab
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_01_BaseMap.png
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texHitSpark.png
+- Assets/JohnnyAssets/Textures/UI/texCrosshairRailgunSniperNib.png
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texRipple.png
+- Assets/HenryAssets/HenryBundle/Materials/matHenryJedi.mat
+- Assets/HenryAssets/HenryBundle/VFX/HenryBazookaExplosionEffect.prefab
+- Assets/JohnnyAssets/Animation/Anims/CSS_Loop.anim
+- Assets/JohnnyAssets/VFX/Material/RC/RCClock_hand.mat
+- Assets/HenryAssets/HenryBundle/VFX/HenrySwordSwingEffect.prefab
+- Assets/JohnnyAssets/VFX/mistFinerEffect.prefab
 - Assets/HenryAssets/HenryBundle/Animation/clips/LightImpact.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matSmoke.mat
 - Assets/HenryAssets/HenryBundle/Animation/clips/WalkF.anim
-- Assets/HenryAssets/HenryBundle/Textures/texHenryAlt.png
+- Assets/JohnnyAssets/Animation/Anims/MistFinerLoop.anim
 - Assets/JohnnyAssets/Textures/Johnny Card White.png
 - Assets/HenryAssets/HenryBundle/Textures/texHenryDante.png
 - Assets/HenryAssets/HenryBundle/Textures/texHenryJedi.png
 - Assets/HenryAssets/HenryBundle/Icons/texScepterSpecialIcon.png
-- Assets/HenryAssets/HenryBundle/VFX/ImpactHenrySlash.prefab
-- Assets/HenryAssets/HenryBundle/Icons/texBazookaFireIcon.png
+- Assets/HenryAssets/HenryBundle/VFX/Textures/texPunchImpactShadow.png
+- Assets/JohnnyAssets/VFX/Material/cardAfterSlashes.mat
+- Assets/JohnnyAssets/VFX/Material/jhn_mist_smoke04.tga
 - Assets/HenryAssets/HenryBundle/Mesh/meshVergilCoat.mesh
 - Assets/HenryAssets/HenryBundle/VFX/ImpactJohnnySlash.prefab
-- Assets/HenryAssets/HenryBundle/VFX/Textures/texPunchImpactShadow.png
+- Assets/JohnnyAssets/Animation/maskAimPitch.mask
+- Assets/JohnnyAssets/VFX/Material/RC/guardanim04.tga
+- Assets/JohnnyAssets/Animation/clips/RestIdleIn.anim
+- Assets/JohnnyAssets/Animation/maskBody.mask
 - Assets/HenryAssets/HenryBundle/Icons/texBazookaIcon.png
-- Assets/HenryAssets/HenryBundle/VFX/ImpactJohnnyPunch.prefab
-- Assets/HenryAssets/HenryBundle/Animation/clips/AimYaw.anim
-- Assets/HenryAssets/HenryBundle/Mesh/meshHenrySword.mesh
-- Assets/HenryAssets/HenryBundle/Icons/texDanteAchievement.png
+- Assets/JohnnyAssets/VFX/Material/jhn_500_kira02.tga
+- Assets/JohnnyAssets/Textures/UI/Battle_Tension_Icon.tga
+- Assets/JohnnyAssets/Textures/UI/texCrosshairRailgunSniperCenter.png
 Dependencies: []

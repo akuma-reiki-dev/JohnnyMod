@@ -31,7 +31,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
 
             swingSoundString = "JohnnySwordSwing";
             hitSoundString = "";
-            muzzleString = swingIndex % 2 == 0 ? "SwingLeft" : "SwingRight";
+            muzzleString = swingIndex % 2 == 0 ? "Swing1" : "Swing2";
             playbackRateParam = "Slash.playbackRate";
             swingEffectPrefab = JohnnyAssets.swordSwingEffect;
             hitEffectPrefab = JohnnyAssets.swordHitImpactEffect;
@@ -41,7 +41,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Slash" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
+            PlayCrossfade("Gesture, Override", "Swing" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()

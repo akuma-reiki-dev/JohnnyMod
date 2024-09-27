@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="PlaySelectNoise" ID="{A02C763B-23A0-4815-B493-75BD19392360}">
+					<ChildrenList>
+						<Action Name="" ID="{FEFE1C53-78FB-432B-A3B5-1C3E96925A44}" ShortID="1007937629">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectVoices" ID="{B908E5BB-FABA-4B1D-B281-34D040DCA85C}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayMistFiner" ID="{8B374BEC-F481-4CF5-9D2E-00845BC61AEF}">
+					<ChildrenList>
+						<Action Name="" ID="{F2B2E9BD-F12B-45B9-9785-89A55CCEBE78}" ShortID="340494931">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MistFiner" ID="{3F2D73DF-D5DC-45FC-A133-88CE67E435DB}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlaySheath" ID="{08328C26-B807-461C-B7B9-413A054F7D9C}">
+					<ChildrenList>
+						<Action Name="" ID="{7BBBE358-ECAE-4DBD-A713-C4CBB3729238}" ShortID="504294591">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SE_BTL_JHN_01 Sheath" ID="{FAC68211-AE62-4A0B-9149-07A89437BB88}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayDeal" ID="{308CD471-8DA2-485E-B6AB-53BEF82D3DE1}">
+					<ChildrenList>
+						<Action Name="" ID="{E8A79241-F6ED-4D11-B8DB-A09B5842785B}" ShortID="405974773">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SE_BTL_JHN_04 Deal" ID="{8A1D74B1-2DCA-4487-92DA-AD5F81324B46}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayLeap" ID="{6B8D8ABF-917E-4B6B-9EF3-903D4296206E}">
+					<ChildrenList>
+						<Action Name="" ID="{2F54E05B-EB92-4AE0-8D29-DC805BAF672B}" ShortID="310872193">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SE_BTL_JHN_07 Vault and Ensenga Jump" ID="{DC555DEE-0237-4246-B332-6139D7F4F71E}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayWinVoice" ID="{068FE060-2205-42BA-A409-9E0BBBF8AF3E}">
+					<ChildrenList>
+						<Action Name="" ID="{B0D8E4E7-3C43-46B6-A685-F23D55B8EC78}" ShortID="398385711">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="WinVoices" ID="{5D20420C-132C-456F-8F36-5135EC902C8D}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayCardPop" ID="{D24CFFD1-1AA9-4D4B-A446-6D73BA2DBACB}">
+					<ChildrenList>
+						<Action Name="" ID="{64597B64-A4C0-426A-9A8E-23F4C317D5B2}" ShortID="805450978">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SE_BTL_JHN_06 CardPop" ID="{C6E9A2FA-DD13-4E88-95C8-74D4CE48FEF6}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayCoinFlip" ID="{13CC6978-6D6B-4AB2-BA2E-3E8A12F14F74}">
+					<ChildrenList>
+						<Action Name="" ID="{7547DC6F-93F3-4346-B5A3-3E9891946DCC}" ShortID="762554969">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CoinShing" ID="{9AB048D1-7AEF-4BDB-A3E2-E2C8449AC2D7}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayMistFinerLvlUp" ID="{985F3F21-9061-4DEF-AE56-D1EC3B0BCCD6}">
+					<ChildrenList>
+						<Action Name="" ID="{A96995E0-4417-4536-988D-B092349E6B92}" ShortID="1037884619">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MistFinerLvlUp" ID="{2FC8B6F3-18D7-4E80-8306-7D103F4AABA1}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayRC" ID="{09A463A6-A117-4638-8A15-485BF47CF9FC}">
+					<ChildrenList>
+						<Action Name="" ID="{63E33FAE-A3C6-45A8-93B6-ECD7768A24C1}" ShortID="436970982">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SE_BTL_CMN_RC_Blue" ID="{8BA12018-AB08-4D59-8E4E-81F2F6CBA9A4}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="PlayLostVoice" ID="{5DD533BD-C63F-4343-9367-8448924C7928}">
+					<ChildrenList>
+						<Action Name="" ID="{823EF8CD-28A0-45EB-A548-D8247F3F99A2}" ShortID="749353930">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LoseVoices" ID="{AE6784B5-AFA4-47A4-9D42-0908666D7C99}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F391B7E6-F83A-4AE6-879A-3EB7A69EC19D}" SchemaVersion="119">
+	<Effects>
+		<WorkUnit Name="Default Work Unit" ID="{F391B7E6-F83A-4AE6-879A-3EB7A69EC19D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="JohnVoiceComp" ID="{9D226CD4-DB31-495A-AD1D-3EFCD454EF6E}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+					<PropertyList>
+						<Property Name="AttackTime" Type="Real32" Value="2"/>
+						<Property Name="OutputGain" Type="Real32" Value="-4.9"/>
+						<Property Name="Ratio" Type="Real32" Value="1"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="VoiceCompressor" ID="{59A04F5A-8785-49B0-B9B4-12CD3C7466C4}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
+				<Effect Name="VoiceEQ" ID="{E2D30063-8931-4473-955B-66351FBB64D2}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FilterTypeBand2" Type="int32" Value="2"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="300"/>
+						<Property Name="FrequencyBand2" Type="Real32" Value="2000"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="20000"/>
+						<Property Name="GainBand2" Type="Real32" Value="1"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="VoiceEQ2" ID="{610E6E90-9C44-4FD5-BECE-CE42D159B578}" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+					<PropertyList>
+						<Property Name="FilterTypeBand1" Type="int32" Value="5"/>
+						<Property Name="FilterTypeBand3" Type="int32" Value="4"/>
+						<Property Name="FrequencyBand1" Type="Real32" Value="400"/>
+						<Property Name="FrequencyBand3" Type="Real32" Value="2000"/>
+						<Property Name="GainBand1" Type="Real32" Value="12"/>
+						<Property Name="GainBand3" Type="Real32" Value="-12"/>
+						<Property Name="OnOffBand2" Type="bool" Value="False"/>
+						<Property Name="OutputLevel" Type="Real32" Value="4"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
+	</Effects>
+</WwiseDocument>

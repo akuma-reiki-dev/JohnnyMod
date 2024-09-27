@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="JohnnyModWWise" GUID="{550A81D3-F280-460C-AE09-F6EFD6E7A3C0}" Generator="2023.1.4.8496"/>
+	<CacheRoot>../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Windows" GUID="{967D1B0F-520F-4D40-8642-1679E4AB09C9}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{7B365060-409A-44BD-9378-D403E0CC1D91}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{C42FF7F6-82EB-C6D1-F629-B05D3CB92F1F}</FileHash>
+</ProjectInfo>

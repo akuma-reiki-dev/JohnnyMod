@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C042E518-FA64-4039-A3DC-147DDA36C514}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{C042E518-FA64-4039-A3DC-147DDA36C514}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="JohnnyBank" ID="{10AF812D-545F-4C99-9BF3-D98439165DEC}">
+					<ObjectInclusionList>
+						<ObjectRef Name="PlayWinVoice" ID="{068FE060-2205-42BA-A409-9E0BBBF8AF3E}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySheath" ID="{08328C26-B807-461C-B7B9-413A054F7D9C}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayRC" ID="{09A463A6-A117-4638-8A15-485BF47CF9FC}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlaySelectNoise" ID="{A02C763B-23A0-4815-B493-75BD19392360}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayDeal" ID="{308CD471-8DA2-485E-B6AB-53BEF82D3DE1}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayCoinFlip" ID="{13CC6978-6D6B-4AB2-BA2E-3E8A12F14F74}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayLeap" ID="{6B8D8ABF-917E-4B6B-9EF3-903D4296206E}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayMistFiner" ID="{8B374BEC-F481-4CF5-9D2E-00845BC61AEF}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayCardPop" ID="{D24CFFD1-1AA9-4D4B-A446-6D73BA2DBACB}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayMistFinerLvlUp" ID="{985F3F21-9061-4DEF-AE56-D1EC3B0BCCD6}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

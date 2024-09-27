@@ -634,7 +634,7 @@ namespace JohnnyMod.Modules
             }
         }
 
-        public static void AddMainEntityStateMachine(GameObject bodyPrefab, string machineName = "Body", Type mainStateType = null, Type initalStateType = null)
+        public static void AddMainEntityStateMachine(GameObject bodyPrefab, string machineName = "Body", Type mainStateType = null, Type initalStateType = null, bool setHurtState = true)
         {
             EntityStateMachine entityStateMachine = EntityStateMachine.FindByCustomName(bodyPrefab, machineName);
             if (entityStateMachine == null)
@@ -673,7 +673,7 @@ namespace JohnnyMod.Modules
             }
 
             SetStateOnHurt setStateOnHurt = bodyPrefab.GetComponent<SetStateOnHurt>();
-            if (setStateOnHurt)
+            if (setStateOnHurt && setHurtState)
             {
                 setStateOnHurt.targetStateMachine = entityStateMachine;
             }

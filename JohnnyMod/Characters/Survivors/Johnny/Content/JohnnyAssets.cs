@@ -6,6 +6,7 @@ using RoR2.Projectile;
 using R2API;
 using UnityEngine.Networking;
 using JohnnyMod.Survivors.Johnny.Components;
+using RoR2.Audio;
 
 namespace JohnnyMod.Survivors.Johnny
 {
@@ -14,6 +15,13 @@ namespace JohnnyMod.Survivors.Johnny
         // particle effects
         public static GameObject swordSwingEffect;
         public static GameObject swordHitImpactEffect;
+
+        public static GameObject cardPopEffect;
+        public static GameObject mistFinerZap;
+        public static GameObject mistFinerZap2;
+        public static GameObject mistFinerZap3;
+        public static GameObject mistFinerLvlUp;
+        public static GameObject romanCancelEffect;
 
         public static GameObject bombExplosionEffect;
 
@@ -27,6 +35,9 @@ namespace JohnnyMod.Survivors.Johnny
 
         internal static Shader hotpoo = Resources.Load<Shader>("Shaders/Deferred/HGStandard");
 
+        // ui stuff
+        public static GameObject tensionGauge;
+
         public static void Init(AssetBundle assetBundle)
         {
 
@@ -35,7 +46,23 @@ namespace JohnnyMod.Survivors.Johnny
             CreateEffects();
 
             CreateProjectiles();
+
+            CreateUIElements();
         }
+
+        #region UI
+        private static void CreateUIElements()
+        {
+            /*GameObject chargeBar = GameObject.Instantiate(_assetBundle.LoadAsset<GameObject>("ChargeBar"));
+            GameObject chargeRing = GameObject.Instantiate(_assetBundle.LoadAsset<GameObject>("ChargeRing"));
+
+            RectTransform rect = chargeBar.GetComponent<RectTransform>();
+
+            rect.localScale = new Vector3(0.25f, 0.25f, 1f);*/
+            tensionGauge = _assetBundle.LoadAsset<GameObject>("JohnnyTensionGauge");
+            //tensionGauge.GetComponent<Animator>().runtimeAnimatorController = LegacyResourcesAPI.Load<RuntimeAnimatorController>("RoR2/DLC1/VoidSurvivor/animVoidSurvivorCorruptionUISimplified.controller");
+        }
+        #endregion
 
         #region effects
         private static void CreateEffects()
@@ -44,6 +71,12 @@ namespace JohnnyMod.Survivors.Johnny
 
             swordSwingEffect = _assetBundle.LoadEffect("JohnnySwordSwingEffect", true);
             swordHitImpactEffect = _assetBundle.LoadEffect("ImpactJohnnySlash");
+            cardPopEffect = _assetBundle.LoadEffect("CardPop");
+            mistFinerZap = _assetBundle.LoadEffect("mistFinerEffect");
+            mistFinerZap2 = _assetBundle.LoadEffect("mistFinerEffectLvl2");
+            mistFinerZap3 = _assetBundle.LoadEffect("mistFinerEffectLvl3");
+            mistFinerLvlUp = _assetBundle.LoadEffect("mfLevelUp");
+            romanCancelEffect = _assetBundle.LoadEffect("RomanCancel");
         }
 
         private static void CreateBombExplosionEffect()
@@ -74,40 +107,105 @@ namespace JohnnyMod.Survivors.Johnny
         {
             CreateCardProjectile();
             Content.AddProjectilePrefab(cardProjectile);
+            Content.AddCharacterBodyPrefab(cardProjectile);
 
-            CreateBlackCard();
+            /*CreateBlackCard();
             Content.AddProjectilePrefab(blackCardProjectile);
+            Content.AddCharacterBodyPrefab(blackCardProjectile);*/
         }
 
         private static void CreateCardProjectile()
         {
             cardProjectile = _assetBundle.LoadAsset<GameObject>("JohnCardWhite").InstantiateClone("JohnnyWhiteCardProj", true);
+
+            var cardController = cardProjectile.AddComponent<CardController>();
+            cardController.projectileHealthComponent = cardProjectile.GetComponent<HealthComponent>();
+
+            var HBG = cardProjectile.transform.GetChild(0).GetComponent<HurtBoxGroup>();
+
+            var hurtBox = cardProjectile.transform.GetChild(0).GetChild(0).GetComponent<HurtBox>();
+            hurtBox.hurtBoxGroup = HBG;
+
+            HBG.mainHurtBox = hurtBox;
+            HBG.bullseyeCount = 1;
+        }
+
+        private static void CreateCardFromGhost()
+        {
+            cardProjectile = Asset.CloneProjectilePrefab("VagrantTrackingBomb", "JohnnyWhiteCardProj");
+
+            cardProjectile.GetComponent<ProjectileSimple>().lifetime = 10;
+            cardProjectile.GetComponent<ProjectileSimple>().desiredForwardSpeed = 64;
+            cardProjectile.GetComponent<ProjectileSimple>().updateAfterFiring = false;
+
+            cardProjectile.GetComponent<Rigidbody>().mass = 1;
+            cardProjectile.GetComponent<Rigidbody>().detectCollisions = true;
+            cardProjectile.GetComponent<Rigidbody>().interpolation = RigidbodyInterpolation.Interpolate;
+            cardProjectile.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+            cardProjectile.GetComponent<SphereCollider>().radius = 0.1f;
+
+            cardProjectile.GetComponent<HealthComponent>().dontShowHealthbar = true;
+
+            cardProjectile.GetComponent<CharacterBody>().maxHealth = 1;
+            cardProjectile.GetComponent<CharacterBody>().baseMaxHealth = 1;
+
+            cardProjectile.GetComponent<TeamComponent>().teamIndex = TeamIndex.Neutral;
+            cardProjectile.GetComponent<TeamComponent>().hideAllyCardDisplay = true;
+
+            cardProjectile.GetComponent<TeamFilter>().teamIndex = TeamIndex.Neutral;
+            cardProjectile.GetComponent<TeamFilter>().NetworkteamIndexInternal = 0;
+            cardProjectile.GetComponent<TeamFilter>().teamIndexInternal = 0;
+
+            cardProjectile.transform.GetChild(0).GetChild(0).GetComponent<SphereCollider>().radius = 0.1f;
+
+            ProjectileController cardCTRL = cardProjectile.GetComponent<ProjectileController>();
+            cardCTRL.ghostPrefab = _assetBundle.LoadAsset<GameObject>("JohnCardWhiteGhost");
+            cardCTRL.flightSoundLoop = new LoopSoundDef();
+
             cardProjectile.AddComponent<CardController>();
 
             var cardController = cardProjectile.AddComponent<CardController>();
             cardController.projectileHealthComponent = cardProjectile.GetComponent<HealthComponent>();
-            cardController.controller = cardProjectile.GetComponent<ProjectileController>();
 
-            cardProjectile.GetComponent<HurtBox>().hurtBoxGroup = cardProjectile.GetComponent<HurtBoxGroup>();
+            var HBG = cardProjectile.transform.GetChild(0).GetComponent<HurtBoxGroup>();
 
-            cardProjectile.GetComponent<HurtBoxGroup>().bullseyeCount = 1;
+            var hurtBox = cardProjectile.transform.GetChild(0).GetChild(0).GetComponent<HurtBox>();
+            hurtBox.hurtBoxGroup = HBG;
+
+            HBG.mainHurtBox = hurtBox;
+            HBG.bullseyeCount = 1;
+
+            //get rid of EVERYTHING that we dont use
+            UnityEngine.Object.Destroy(cardProjectile.transform.GetChild(1).gameObject);
+            UnityEngine.Object.Destroy(cardProjectile.transform.GetChild(2).gameObject);
+            UnityEngine.Object.Destroy(cardProjectile.transform.GetChild(3).gameObject);
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<ProjectileImpactExplosion>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<ProjectileDamage>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<AkGameObj>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<ProjectileTargetComponent>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<ProjectileDirectionalTargetFinder>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<ProjectileSteerTowardTarget>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<AssignTeamFilterToTeamComponent>());
+            UnityEngine.Object.Destroy(cardProjectile.GetComponent<ModelLocator>());
         }
 
         private static void CreateBlackCard()
         {
             blackCardProjectile = _assetBundle.LoadAsset<GameObject>("JohnCardBlack").InstantiateClone("JohnnyBlackCardProj", true);
-            //we disable gravity for when its initially spawned.
-            blackCardProjectile.GetComponent<Rigidbody>().useGravity = false;
 
             blackCardProjectile.AddComponent<CardController>();
 
             var cardController = blackCardProjectile.AddComponent<CardController>();
             cardController.projectileHealthComponent = blackCardProjectile.GetComponent<HealthComponent>();
-            cardController.controller = blackCardProjectile.GetComponent<ProjectileController>();
 
-            blackCardProjectile.GetComponent<HurtBox>().hurtBoxGroup = blackCardProjectile.GetComponent<HurtBoxGroup>();
+            var HBG = blackCardProjectile.GetComponent<HurtBoxGroup>();
 
-            blackCardProjectile.GetComponent<HurtBoxGroup>().bullseyeCount = 1;
+            var hurtBox = blackCardProjectile.transform.GetChild(0).GetComponent<HurtBox>();
+            hurtBox.hurtBoxGroup = HBG;
+
+            HBG.mainHurtBox = hurtBox;
+            HBG.bullseyeCount = 1;
         }
 
         private static void CreateBombProjectile()
@@ -138,7 +236,7 @@ namespace JohnnyMod.Survivors.Johnny
         }
         #endregion projectiles
 
-        #region depends
+        #region dependancies
         private static GameObject CreateGhostPrefab(string ghostName)
         {
             GameObject ghostPrefab = _assetBundle.LoadAsset<GameObject>(ghostName).InstantiateClone(ghostName);

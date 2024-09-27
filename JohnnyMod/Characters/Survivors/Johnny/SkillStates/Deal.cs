@@ -6,56 +6,68 @@ using UnityEngine;
 
 namespace JohnnyMod.Survivors.Johnny.SkillStates
 {
-    public class Deal : GenericProjectileBaseState
+    public class Deal : BaseSkillState
     {
         public static float BaseDuration = 0.65f;
-        //delays for projectiles feel absolute ass so only do this if you know what you're doing, otherwise it's best to keep it at 0
-        public static float BaseDelayDuration = 0.0f;
 
-        public static float DamageCoefficient = 16f;
+        public float duration = 0.65f;
+
+        private bool hasFired = false;
+        private Ray aimRay;
 
         public override void OnEnter()
         {
-            projectilePrefab = JohnnyAssets.blackCardProjectile;
-            //base.effectPrefab = Modules.Assets.SomeMuzzleEffect;
-            //targetmuzzle = "muzzleThrow"
-
-            attackSoundString = "JohnnyBombThrow";
-
-            baseDuration = BaseDuration;
-            baseDelayBeforeFiringProjectile = BaseDelayDuration;
-
-            damageCoefficient = DamageCoefficient;
-            //proc coefficient is set on the components of the projectile prefab
-            force = 96f;
-
-            //base.projectilePitchBonus = 0;
-            //base.minSpread = 0;
-            //base.maxSpread = 0;
-
-            recoilAmplitude = 0;
-            bloom = 0;
-
             base.OnEnter();
+
+            duration = BaseDuration / attackSpeedStat;
+            aimRay = GetAimRay();
+
+            Util.PlaySound("PlayDeal", gameObject);
+
+            PlayAnimation("Gesture, Override", "Deal", "Deal.playbackRate", this.duration);
+            //this is only existing so i can do the ammend thing
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            if (!hasFired)
+            {
+                Fire();
+            }
+            if(hasFired && fixedAge >= duration)
+            {
+                outer.SetNextStateToMain();
+                return;
+            }
+        }
+
+        private void Fire()
+        {
+            hasFired = true;
+            if (isAuthority)
+            {
+                FireProjectileInfo CardInfo = new FireProjectileInfo()
+                {
+                    owner = gameObject,
+                    damage = 1 * characterBody.damage,
+                    force = 0,
+                    position = aimRay.origin,
+                    crit = characterBody.RollCrit(),
+                    //position = FindModelChild(handString).position,
+                    rotation = Util.QuaternionSafeLookRotation(aimRay.direction),
+                    projectilePrefab = JohnnyAssets.cardProjectile,
+                    speedOverride = 64,
+                    //damageTypeOverride = characterBody.HasBuff(Modules.Buffs.assassinDrugsBuff) ? (DamageType?)Modules.Projectiles.poisonDmgType : (DamageType?)Modules.Projectiles.poisonDmgType,
+                };
+
+                ProjectileManager.instance.FireProjectile(CardInfo);
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.Skill;
-        }
-
-        public override void PlayAnimation(float duration)
-        {
-
-            if (GetModelAnimator())
-            {
-                PlayAnimation("Gesture, Override", "ThrowBomb", "ThrowBomb.playbackRate", this.duration);
-            }
+            return InterruptPriority.Pain;
         }
     }
 }

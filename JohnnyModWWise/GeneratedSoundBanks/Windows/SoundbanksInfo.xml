@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8E0040FE-D43A-23AC-F3F5-474952F8AFB7}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="1693404274" Name="MFLevel"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+			</GameParameters>
+		</SoundBank>
+		<SoundBank Id="4059305719" Type="User" Language="SFX" Hash="{BAFA28EB-050E-DB58-8203-E20D1B5E28DE}">
+			<ShortName>JohnnyBank</ShortName>
+			<Path>JohnnyBank.bnk</Path>
+			<Media>
+				<File Id="23319721" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_02 Mist Finer Meaty Sound.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_02 Mist Finer Meaty Sound_8E324C96.wem</CachePath>
+				</File>
+				<File Id="98100172" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_03 MF Boom.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_03 MF Boom_8E324C96.wem</CachePath>
+				</File>
+				<File Id="141743249" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>do this with style.wav</ShortName>
+					<CachePath>SFX/do this with style_8E324C96.wem</CachePath>
+				</File>
+				<File Id="169121957" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>lucky johnny gave a chance.wav</ShortName>
+					<CachePath>SFX/lucky johnny gave a chance_8E324C96.wem</CachePath>
+				</File>
+				<File Id="181430493" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_07 Vault and Ensenga Jump.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_07 Vault and Ensenga Jump_8E324C96.wem</CachePath>
+				</File>
+				<File Id="332525918" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>handsome guy wins.wav</ShortName>
+					<CachePath>SFX/handsome guy wins_8E324C96.wem</CachePath>
+				</File>
+				<File Id="409897045" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>wanna be a hero.wav</ShortName>
+					<CachePath>SFX/wanna be a hero_8E324C96.wem</CachePath>
+				</File>
+				<File Id="452917109" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_04 Deal.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_04 Deal_8E324C96.wem</CachePath>
+				</File>
+				<File Id="501115062" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_01 Sheath.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_01 Sheath_8E324C96.wem</CachePath>
+				</File>
+				<File Id="502831786" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_CMN_RC_Blue.wav</ShortName>
+					<CachePath>SFX/SE_BTL_CMN_RC_Blue_8E324C96.wem</CachePath>
+				</File>
+				<File Id="602182792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>im perfect.wav</ShortName>
+					<CachePath>SFX/im perfect_8E324C96.wem</CachePath>
+				</File>
+				<File Id="638523529" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>make it snappy.wav</ShortName>
+					<CachePath>SFX/make it snappy_8E324C96.wem</CachePath>
+				</File>
+				<File Id="685031763" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>takin a gamble.wav</ShortName>
+					<CachePath>SFX/takin a gamble_8E324C96.wem</CachePath>
+				</File>
+				<File Id="791020048" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>lady luck loves a gambler.wav</ShortName>
+					<CachePath>SFX/lady luck loves a gambler_8E324C96.wem</CachePath>
+				</File>
+				<File Id="894107870" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>keep half the pop waiting.wav</ShortName>
+					<CachePath>SFX/keep half the pop waiting_8E324C96.wem</CachePath>
+				</File>
+				<File Id="899759526" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_06 CardPop.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_06 CardPop_8E324C96.wem</CachePath>
+				</File>
+				<File Id="966994400" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>curtain calls.wav</ShortName>
+					<CachePath>SFX/curtain calls_8E324C96.wem</CachePath>
+				</File>
+				<File Id="1006256319" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_00 MF Light Slash.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_00 MF Light Slash_8E324C96.wem</CachePath>
+				</File>
+				<File Id="1062112498" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CoinShing.wav</ShortName>
+					<CachePath>SFX/CoinShing_8E324C96.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="776837744" Name="Born_In_1950" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="1979096043" Name="VoiceEQ2" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="2135883084" Name="Nasty_Radio" LibName="Wwise Peak Limiter" LibId="7208963"/>
+					<Plugin Id="2667647788" Name="Single_Band_1Khz_Wide" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="3539075171" Name="VoiceEQ" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="3883459230" Name="PlayCardPop">
+					<MediaRefs>
+						<MediaRef Id="899759526"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1044325701" Name="PlayCoinFlip">
+					<MediaRefs>
+						<MediaRef Id="1062112498"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="662274973" Name="PlayDeal">
+					<MediaRefs>
+						<MediaRef Id="452917109"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2967634857" Name="PlayLeap">
+					<MediaRefs>
+						<MediaRef Id="181430493"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3575152198" Name="PlayMistFiner">
+					<MediaRefs>
+						<MediaRef Id="23319721"/>
+						<MediaRef Id="98100172"/>
+						<MediaRef Id="1006256319"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="216919655" Name="PlayMistFinerLvlUp">
+					<MediaRefs>
+						<MediaRef Id="1062112498"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1455317230" Name="PlayRC">
+					<MediaRefs>
+						<MediaRef Id="502831786"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1836869611" Name="PlaySelectNoise">
+					<MediaRefs>
+						<MediaRef Id="141743249"/>
+						<MediaRef Id="169121957"/>
+						<MediaRef Id="409897045"/>
+						<MediaRef Id="638523529"/>
+						<MediaRef Id="685031763"/>
+						<MediaRef Id="791020048"/>
+						<MediaRef Id="894107870"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="776837744"/>
+							<PluginRef Id="1979096043"/>
+							<PluginRef Id="2135883084"/>
+							<PluginRef Id="2667647788"/>
+							<PluginRef Id="3539075171"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="2149925004" Name="PlaySheath">
+					<MediaRefs>
+						<MediaRef Id="501115062"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3023499623" Name="PlayWinVoice">
+					<MediaRefs>
+						<MediaRef Id="332525918"/>
+						<MediaRef Id="602182792"/>
+						<MediaRef Id="966994400"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1979096043"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+			</Events>
+			<GameParameters>
+				<GameParameter Id="1693404274" Name="MFLevel"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+				<GameParameter Id="3695994288" Name="Volume_Master"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{ADC65056-D7F4-481B-A532-6C6E791AA121}</FileHash>
+</SoundBanksInfo>

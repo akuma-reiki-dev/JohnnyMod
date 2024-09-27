@@ -28,6 +28,8 @@ namespace JohnnyMod.Survivors.Johnny
 
         public const string Johnny_PREFIX = JohnnyPlugin.DEVELOPER_PREFIX + "_Johnny_";
 
+        public override Type characterDeathState => typeof(JohnnyDeath);
+
         //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => Johnny_PREFIX;
         
@@ -44,33 +46,91 @@ namespace JohnnyMod.Survivors.Johnny
             crosshair = Asset.LoadCrosshair("Standard"),
             podPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
-            maxHealth = 110f,
-            healthRegen = 1.5f,
-            armor = 0f,
+            maxHealth = 100,
+            healthRegen = 4.5f,
+            moveSpeed = 10,
+            armor = 5f,
 
-            jumpCount = 1,
+            jumpCount = 2,
         };
 
         public override CustomRendererInfo[] customRendererInfos => new CustomRendererInfo[]
         {
+                //hard stuff
                 new CustomRendererInfo
                 {
-                    childName = "SwordModel",
+                    childName = "Hands",
+                    material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "Body",
+                    //material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "BuckleSmall",
+                    //material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "Belt",
+                    //material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "BuckleBig",
+                    //material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "Pants",
+                    //material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "Shoes",
+                    //material = assetBundle.LoadMaterial("mtrlJohnHard"),
+                },
+                //soft stuff
+                new CustomRendererInfo
+                {
+                    childName = "Hat",
+                    material = assetBundle.LoadMaterial("mtrlJohnSoft"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "Jacket",
+                    //material = assetBundle.LoadMaterial("mtrlJohnSoft"),
+                },
+                //weapon
+                new CustomRendererInfo
+                {
+                    childName = "KatanaBlade",
                     material = assetBundle.LoadMaterial("matJohnny"),
                 },
                 new CustomRendererInfo
                 {
-                    childName = "GunModel",
+                    childName = "KatanaHilt",
+                    //material = assetBundle.LoadMaterial("matJohnny"),
                 },
                 new CustomRendererInfo
                 {
-                    childName = "Model",
-                }
+                    childName = "KatanaSheath",
+                    //material = assetBundle.LoadMaterial("matJohnny"),
+                },
+                new CustomRendererInfo
+                {
+                    childName = "SwordSimp",
+                    //material = assetBundle.LoadMaterial("matJohnny"),
+                },
         };
 
         public override UnlockableDef characterUnlockableDef => JohnnyUnlockables.characterUnlockableDef;
         
         public override ItemDisplaysBase itemDisplays => new JohnnyItemDisplays();
+
+        //public override Type characterDeathState => typeof(JohnnyDeath);
 
         //set in base classes
         public override AssetBundle assetBundle { get; protected set; }
@@ -119,8 +179,10 @@ namespace JohnnyMod.Survivors.Johnny
         private void AdditionalBodySetup()
         {
             AddHitboxes();
-            bodyPrefab.AddComponent<JohnnyStanceComponent>();
-            //anything else here
+            bodyPrefab.AddComponent<JohnnyTensionController>();
+            //bodyPrefab.AddComponent<JohnnyRCControl>();
+
+            if (displayPrefab) displayPrefab.AddComponent<MenuSoundComponent>();
         }
 
         public void AddHitboxes()
@@ -138,9 +200,12 @@ namespace JohnnyMod.Survivors.Johnny
             Prefabs.ClearEntityStateMachines(bodyPrefab);
 
             //the main "Body" state machine has some special properties
-            Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(EntityStates.GenericCharacterMain), typeof(EntityStates.SpawnTeleporterState));
+            //Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(EntityStates.GenericCharacterMain), typeof(EntityStates.SpawnTeleporterState));
+            Prefabs.AddMainEntityStateMachine(bodyPrefab, "Body", typeof(JohnnyMainState), typeof(EntityStates.SpawnTeleporterState));
             //if you set up a custom main characterstate, set it up here
                 //don't forget to register custom entitystates in your JohnnyStates.cs
+
+            Prefabs.AddMainEntityStateMachine(bodyPrefab, "RomanCancel", typeof(RomanIdle), typeof(RomanIdle), false);
 
             Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon");
             Prefabs.AddEntityStateMachine(bodyPrefab, "Weapon2");
@@ -153,63 +218,56 @@ namespace JohnnyMod.Survivors.Johnny
             Skills.ClearGenericSkills(bodyPrefab);
             //add our own
             //AddPassiveSkill();
+            CreatePassives();
             AddPrimarySkills();
             AddSecondarySkills();
             AddUtiitySkills();
             AddSpecialSkills();
         }
 
-        //skip if you don't have a passive
-        //also skip if this is your first look at skills
-        private void AddPassiveSkill()
+        private void CreatePassives()
         {
-            //option 1. fake passive icon just to describe functionality we will implement elsewhere
-            bodyPrefab.GetComponent<SkillLocator>().passiveSkill = new SkillLocator.PassiveSkill
-            {
-                enabled = true,
-                skillNameToken = Johnny_PREFIX + "PASSIVE_NAME",
-                skillDescriptionToken = Johnny_PREFIX + "PASSIVE_DESCRIPTION",
-                keywordToken = "KEYWORD_STUNNING",
-                icon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
-            };
+            //this exists so we can assign Vault to the passive skill family.
+            GenericSkill passiveSkill = Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, "LOADOUT_SKILL_PASSIVE", "johnnypassive");
 
-            //option 2. a new SkillFamily for a passive, used if you want multiple selectable passives
-            GenericSkill passiveGenericSkill = Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, "PassiveSkill");
-            SkillDef passiveSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef stepDashDef = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "JohnnyPassive",
+                //skillName = "JohnnyDash",
+                //skillNameToken = Johnny_PREFIX + "UTILITY_DASH_NAME",
+                //skillDescriptionToken = Johnny_PREFIX + "UTILITY_DASH_DESCRIPTION",
+                //skillIcon = assetBundle.LoadAsset<Sprite>("texUtilityIcon"),
+                skillName = "JohnnyDash",
                 skillNameToken = Johnny_PREFIX + "PASSIVE_NAME",
                 skillDescriptionToken = Johnny_PREFIX + "PASSIVE_DESCRIPTION",
-                keywordTokens = new string[] { "KEYWORD_AGILE" },
                 skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+                keywordTokens = new string[] { Johnny_PREFIX + "KEYWORD_TENSION", Johnny_PREFIX + "KEYWORD_STEPDASH", Johnny_PREFIX + "KEYWORD_RC" },
 
-                //unless you're somehow activating your passive like a skill, none of the following is needed.
-                //but that's just me saying things. the tools are here at your disposal to do whatever you like with
+                activationState = new EntityStates.SerializableEntityStateType(typeof(StepDash)),
+                activationStateMachineName = "Weapon2",
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
-                //activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Deal)),
-                //activationStateMachineName = "Weapon1",
-                //interruptPriority = EntityStates.InterruptPriority.Skill,
+                baseRechargeInterval = 1.25f,
+                baseMaxStock = 1,
 
-                //baseRechargeInterval = 1f,
-                //baseMaxStock = 1,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
 
-                //rechargeStock = 1,
-                //requiredStock = 1,
-                //stockToConsume = 1,
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = false,
+                beginSkillCooldownOnSkillEnd = false,
 
-                //resetCooldownTimerOnUse = false,
-                //fullRestockOnAssign = true,
-                //dontAllowPastMaxStocks = false,
-                //mustKeyPress = false,
-                //beginSkillCooldownOnSkillEnd = false,
-
-                //isCombatSkill = true,
-                //canceledFromSprinting = false,
-                //cancelSprintingOnActivation = false,
-                //forceSprintDuringState = false,
-
+                isCombatSkill = false,
+                canceledFromSprinting = false,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = true,
             });
-            Skills.AddSkillsToFamily(passiveGenericSkill.skillFamily, passiveSkillDef1);
+
+            JohnnyStaticValues.StepDash = stepDashDef;
+
+            Skills.AddSkillsToFamily(passiveSkill.skillFamily, stepDashDef);
         }
 
         //if this is your first look at skilldef creation, take a look at Secondary first
@@ -241,19 +299,19 @@ namespace JohnnyMod.Survivors.Johnny
             Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, SkillSlot.Secondary);
 
             //here is a basic skill def with all fields accounted for
-            SkillDef secondarySkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef mistFinerDef = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "JohnnyGun",
-                skillNameToken = Johnny_PREFIX + "SECONDARY_GUN_NAME",
-                skillDescriptionToken = Johnny_PREFIX + "SECONDARY_GUN_DESCRIPTION",
+                skillName = "JohnnyMistFiner",
+                skillNameToken = Johnny_PREFIX + "SECONDARY_MIST_NAME",
+                skillDescriptionToken = Johnny_PREFIX + "SECONDARY_MIST_DESCRIPTION",
                 keywordTokens = new string[] { "KEYWORD_AGILE" },
                 skillIcon = assetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.MistFiner)),
                 activationStateMachineName = "Weapon2",
-                interruptPriority = EntityStates.InterruptPriority.Skill,
+                interruptPriority = EntityStates.InterruptPriority.Pain,
 
-                baseRechargeInterval = 1f,
+                baseRechargeInterval = 3f,
                 baseMaxStock = 1,
 
                 rechargeStock = 1,
@@ -263,33 +321,32 @@ namespace JohnnyMod.Survivors.Johnny
                 resetCooldownTimerOnUse = false,
                 fullRestockOnAssign = true,
                 dontAllowPastMaxStocks = false,
-                mustKeyPress = false,
-                beginSkillCooldownOnSkillEnd = false,
+                mustKeyPress = true,
+                beginSkillCooldownOnSkillEnd = true,
 
                 isCombatSkill = true,
-                canceledFromSprinting = false,
-                cancelSprintingOnActivation = false,
+                canceledFromSprinting = true,
+                cancelSprintingOnActivation = true,
                 forceSprintDuringState = false,
 
             });
 
-            Skills.AddSecondarySkills(bodyPrefab, secondarySkillDef1);
+            Skills.AddSecondarySkills(bodyPrefab, mistFinerDef);
         }
 
         private void AddUtiitySkills()
         {
             Skills.CreateGenericSkillWithSkillFamily(bodyPrefab, SkillSlot.Utility);
 
-            //here's a skilldef of a typical movement skill.
-            SkillDef utilitySkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
+            SkillDef vaultDef = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "JohnnyRoll",
-                skillNameToken = Johnny_PREFIX + "UTILITY_ROLL_NAME",
-                skillDescriptionToken = Johnny_PREFIX + "UTILITY_ROLL_DESCRIPTION",
-                skillIcon = assetBundle.LoadAsset<Sprite>("texUtilityIcon"),
+                skillName = "JohnnyVault",
+                skillNameToken = Johnny_PREFIX + "UTILITY_VAULT_NAME",
+                skillDescriptionToken = Johnny_PREFIX + "UTILITY_VAULT_DESCRIPTION",
+                skillIcon = assetBundle.LoadAsset<Sprite>("texUtilityVault"),
 
-                activationState = new EntityStates.SerializableEntityStateType(typeof(Roll)),
-                activationStateMachineName = "Body",
+                activationState = new EntityStates.SerializableEntityStateType(typeof(Vault)),
+                activationStateMachineName = "Weapon2",
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
 
                 baseRechargeInterval = 4f,
@@ -308,10 +365,45 @@ namespace JohnnyMod.Survivors.Johnny
                 isCombatSkill = false,
                 canceledFromSprinting = false,
                 cancelSprintingOnActivation = false,
-                forceSprintDuringState = true,
+                forceSprintDuringState = false,
             });
 
-            Skills.AddUtilitySkills(bodyPrefab, utilitySkillDef1);
+            JohnnyStaticValues.Vault = vaultDef;
+            Skills.AddUtilitySkills(bodyPrefab, vaultDef);
+
+
+            //here's a skilldef of a typical movement skill.
+            SkillDef mistStepDef = Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "JohnnyMistFinerDash",
+                skillNameToken = Johnny_PREFIX + "UTILITY_STEPDASH_NAME",
+                skillDescriptionToken = Johnny_PREFIX + "UTILITY_STEPDASH_DESCRIPTION",
+                skillIcon = assetBundle.LoadAsset<Sprite>("texMistFinderDashIcon"),
+
+                activationState = new EntityStates.SerializableEntityStateType(typeof(MistFinerDash)),
+                activationStateMachineName = "Weapon2",
+                interruptPriority = EntityStates.InterruptPriority.Stun,
+
+                baseRechargeInterval = 4f,
+                baseMaxStock = 1,
+
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+
+                resetCooldownTimerOnUse = false,
+                fullRestockOnAssign = true,
+                dontAllowPastMaxStocks = false,
+                mustKeyPress = false,
+                beginSkillCooldownOnSkillEnd = false,
+
+                isCombatSkill = false,
+                canceledFromSprinting = true,
+                cancelSprintingOnActivation = false,
+                forceSprintDuringState = false,
+            });
+
+            JohnnyStaticValues.MistFinerDash = mistStepDef;
         }
 
         private void AddSpecialSkills()
@@ -321,9 +413,9 @@ namespace JohnnyMod.Survivors.Johnny
             //a basic skill. some fields are omitted and will just have default values
             SkillDef specialSkillDef1 = Skills.CreateSkillDef(new SkillDefInfo
             {
-                skillName = "JohnnyBomb",
-                skillNameToken = Johnny_PREFIX + "SPECIAL_BOMB_NAME",
-                skillDescriptionToken = Johnny_PREFIX + "SPECIAL_BOMB_DESCRIPTION",
+                skillName = "JohnnyDeal",
+                skillNameToken = Johnny_PREFIX + "SPECIAL_DEAL_NAME",
+                skillDescriptionToken = Johnny_PREFIX + "SPECIAL_DEAL_DESCRIPTION",
                 skillIcon = assetBundle.LoadAsset<Sprite>("texSpecialIcon"),
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(SkillStates.Deal)),
@@ -331,7 +423,7 @@ namespace JohnnyMod.Survivors.Johnny
                 activationStateMachineName = "Weapon2", interruptPriority = EntityStates.InterruptPriority.Skill,
 
                 baseMaxStock = 1,
-                baseRechargeInterval = 10f,
+                baseRechargeInterval = 4f,
 
                 isCombatSkill = true,
                 mustKeyPress = false,
@@ -374,38 +466,24 @@ namespace JohnnyMod.Survivors.Johnny
             //uncomment this when you have a mastery skin
             #region MasterySkin
             
-            ////creating a new skindef as we did before
-            //SkinDef masterySkin = Modules.Skins.CreateSkinDef(Johnny_PREFIX + "MASTERY_SKIN_NAME",
-            //    assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
-            //    defaultRendererinfos,
-            //    prefabCharacterModel.gameObject,
-            //    JohnnyUnlockables.masterySkinUnlockableDef);
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef(Johnny_PREFIX + "MASTERY_SKIN_NAME",
+                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                defaultRendererinfos,
+                prefabCharacterModel.gameObject,
+                JohnnyUnlockables.masterySkinUnlockableDef);
 
-            ////adding the mesh replacements as above. 
-            ////if you don't want to replace the mesh (for example, you only want to replace the material), pass in null so the order is preserved
-            //masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(assetBundle, defaultRendererinfos,
-            //    "meshJohnnySwordAlt",
-            //    null,//no gun mesh replacement. use same gun mesh
-            //    "meshJohnnyAlt");
+            masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
+            masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
+            masterySkin.rendererInfos[2].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
+            masterySkin.rendererInfos[3].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
+            masterySkin.rendererInfos[4].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
+            masterySkin.rendererInfos[5].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
+            masterySkin.rendererInfos[6].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnHardMastery");
 
-            ////masterySkin has a new set of RendererInfos (based on default rendererinfos)
-            ////you can simply access the RendererInfos' materials and set them to the new materials for your skin.
-            //masterySkin.rendererInfos[0].defaultMaterial = assetBundle.LoadMaterial("matJohnnyAlt");
-            //masterySkin.rendererInfos[1].defaultMaterial = assetBundle.LoadMaterial("matJohnnyAlt");
-            //masterySkin.rendererInfos[2].defaultMaterial = assetBundle.LoadMaterial("matJohnnyAlt");
+            masterySkin.rendererInfos[7].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnSoftMastery");
+            masterySkin.rendererInfos[8].defaultMaterial = assetBundle.LoadMaterial("mtrlJohnSoftMastery");
 
-            ////here's a barebones example of using gameobjectactivations that could probably be streamlined or rewritten entirely, truthfully, but it works
-            //masterySkin.gameObjectActivations = new SkinDef.GameObjectActivation[]
-            //{
-            //    new SkinDef.GameObjectActivation
-            //    {
-            //        gameObject = childLocator.FindChildGameObject("GunModel"),
-            //        shouldActivate = false,
-            //    }
-            //};
-            ////simply find an object on your child locator you want to activate/deactivate and set if you want to activate/deacitvate it with this skin
-
-            //skins.Add(masterySkin);
+            skins.Add(masterySkin);
             
             #endregion
 

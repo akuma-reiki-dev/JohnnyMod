@@ -18,6 +18,8 @@ namespace JohnnyMod.Modules.Characters
 
         public virtual ItemDisplaysBase itemDisplays { get; }
 
+        public virtual Type characterDeathState { get; }
+
         public static T instance { get; private set; }
 
         public abstract AssetBundle assetBundle { get; protected set; }
@@ -48,6 +50,9 @@ namespace JohnnyMod.Modules.Characters
 
             bodyPrefab = Modules.Prefabs.CreateBodyPrefab(characterModelObject, bodyInfo);
             prefabCharacterBody = bodyPrefab.GetComponent<CharacterBody>();
+            
+            CharacterDeathBehavior prefabCharacterDeathState = bodyPrefab.GetComponent<CharacterDeathBehavior>();
+            prefabCharacterDeathState.deathState.stateType = characterDeathState;
 
             prefabCharacterModel = Modules.Prefabs.SetupCharacterModel(bodyPrefab, customRendererInfos);
         }
