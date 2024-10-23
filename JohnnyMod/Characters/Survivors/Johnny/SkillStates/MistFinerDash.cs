@@ -78,6 +78,8 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             {
                 base.skillLocator.utility.UnsetSkillOverride(gameObject, JohnnyStaticValues.MistFinerDash, GenericSkill.SkillOverridePriority.Contextual);
             }
+
+            GetModelAnimator().SetBool("MistFiner.channeled", false);
             base.OnExit();
         }
 

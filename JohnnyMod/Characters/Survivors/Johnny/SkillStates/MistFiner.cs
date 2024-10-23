@@ -41,11 +41,16 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             fireTime = firePercentTime * duration;
             characterBody.SetAimTimer(2f);
             muzzleString = "KatanaHilt";
-            childLoc = GetComponent<ChildLocator>();
+
+            childLoc = GetModelChildLocator();
+            childLoc.FindChild("GhostHilt").gameObject.SetActive(false);
+            childLoc.FindChild("KatanaHilt").gameObject.SetActive(true);
+            childLoc.FindChild("KatanaBlade").gameObject.SetActive(true);
+            childLoc.FindChild("SwordSimp").gameObject.SetActive(true);
 
             animator = GetModelAnimator();
 
-            PlayAnimation("FullBody, Override", "MistFinerIntro");
+            PlayAnimation("UpperBody, Override", "MistFinerIntro");
             animator.SetBool("MistFiner.channeled", true);
 
             //Replaces Utility skill with Mist Finer Dash
@@ -59,6 +64,10 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
         {
             base.OnExit();
             animator.SetBool("MistFiner.channeled", false);
+            childLoc.FindChild("GhostHilt").gameObject.SetActive(true);
+            childLoc.FindChild("KatanaHilt").gameObject.SetActive(false);
+            childLoc.FindChild("KatanaBlade").gameObject.SetActive(false);
+            childLoc.FindChild("SwordSimp").gameObject.SetActive(false);
         }
 
         public override void FixedUpdate()
@@ -70,9 +79,10 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 tier1 = true;
                 AkSoundEngine.SetRTPCValue("MFLevel", 0, gameObject);
                 Util.PlaySound("PlayMistFinerLvlUp", gameObject);
+                //spawn the level up effect on the sheath
                 EffectData effectData = new EffectData
                 {
-                    origin = childLoc.FindChild("KatanaSheath").transform.position,
+                    origin = childLoc.FindChild("SheenSpawn").transform.position,
                     scale = 1f,
                 };
                 EffectManager.SpawnEffect(JohnnyAssets.mistFinerLvlUp, effectData, transmit: true);
@@ -82,9 +92,10 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 tier2 = true;
                 AkSoundEngine.SetRTPCValue("MFLevel", 1, gameObject);
                 Util.PlaySound("PlayMistFinerLvlUp", gameObject);
+                //spawn the level up effect on the sheath
                 EffectData effectData = new EffectData
                 {
-                    origin = childLoc.FindChild("KatanaSheath").transform.position,
+                    origin = childLoc.FindChild("SheenSpawn").transform.position,
                     scale = 1f,
                 };
                 EffectManager.SpawnEffect(JohnnyAssets.mistFinerLvlUp, effectData, transmit: true);
@@ -97,6 +108,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 if (base.skillLocator.utility != null)
                 {
                     base.skillLocator.utility.UnsetSkillOverride(gameObject, JohnnyStaticValues.MistFinerDash, GenericSkill.SkillOverridePriority.Contextual);
+                    animator.SetBool("MistFiner.channeled", false);
                 }
                 //we dont fire until the key is released, it should make it fire 
                 Fire();
@@ -119,7 +131,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 EffectManager.SimpleMuzzleFlash(EntityStates.Commando.CommandoWeapon.FirePistol2.muzzleEffectPrefab, gameObject, muzzleString, false);
 
                 animator.SetBool("MistFiner.channeled", false);
-                PlayAnimation("FullBody, Override", "MistFinerFire");
+                PlayAnimation("UpperBody, Override", "MistFinerFire");
 
                 if (isAuthority)
                 {
@@ -128,7 +140,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                     float damage = damageCoefficient * damageStat;
                     if (tier1) damage *= 1.25f;
                     if (tier2) damage *= 1.75f; //m,ake this 2.5 :itwouldseemtroll:
-                    //Mathf.Lerp(damage, damage * 2.5f, lvl2time);
+                    //Mathf.Lerp(damage, damage * 2.5f, lvl2time)
 
                     new BulletAttack
                     {

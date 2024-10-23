@@ -107,7 +107,7 @@ namespace JohnnyMod.Survivors.Johnny
                 new CustomRendererInfo
                 {
                     childName = "KatanaBlade",
-                    material = assetBundle.LoadMaterial("matJohnny"),
+                    material = assetBundle.LoadMaterial("mtrlJohnWeap"),
                 },
                 new CustomRendererInfo
                 {
@@ -288,7 +288,7 @@ namespace JohnnyMod.Survivors.Johnny
                     true
                 ));
             //custom Skilldefs can have additional fields that you can set manually
-            primarySkillDef1.stepCount = 2;
+            primarySkillDef1.stepCount = 3;
             primarySkillDef1.stepGraceDuration = 0.5f;
 
             Skills.AddPrimarySkills(bodyPrefab, primarySkillDef1);

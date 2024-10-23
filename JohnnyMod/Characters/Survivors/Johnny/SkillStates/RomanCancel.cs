@@ -26,6 +26,9 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 Body.SetState(new Idle());
                 Weap.SetState(new Idle());
                 Weap2.SetState(new Idle());
+
+                PlayAnimation("FullBody, Override", "RomanCancel");
+                GetModelAnimator().Play("RomanCancel");
             }
 
             EffectData effData = new EffectData
@@ -38,8 +41,6 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             unsetPrevVel = false;
             duration = 0.35f;
             Util.PlaySound("PlayRC", gameObject);
-
-            PlayAnimation("FullBody, Override", "RomanCancel");
 
             if (NetworkServer.active)
             {

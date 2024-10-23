@@ -1,19 +1,17 @@
 ManifestFileVersion: 0
-CRC: 1928887689
+CRC: 1253994771
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9a1bc6039b4131c958819a056c60af61
+    Hash: a8c2f3019bcf1655077e83af87185608
   TypeTreeHash:
     serializedVersion: 2
-    Hash: bfe7066a76e7f53523e6bb31f435c296
+    Hash: f70e5a72216091d351e0a28a01e8d83e
 HashAppended: 0
 ClassTypes:
 - Class: 1
   Script: {instanceID: 0}
 - Class: 4
-  Script: {instanceID: 0}
-- Class: 20
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -198,12 +196,13 @@ Assets:
 - Assets/HenryAssets/HenryBundle/Animation/clips/ShootGun.anim
 - Assets/HenryAssets/HenryBundle/Icons/texHenryIcon.png
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matDust.mat
-- Assets/JohnnyAssets/Animation/Anims/Idle.anim
+- Assets/JohnnyAssets/Animation/Anims/MFWalkR.anim
 - Assets/HenryAssets/HenryBundle/Textures/texHenry.png
 - Assets/HenryAssets/HenryBundle/Animation/clips/IdleAdditive.anim
 - Assets/HenryAssets/HenryBundle/VFX/Mesh/meshBoxingGlove.mesh
 - Assets/HenryAssets/HenryBundle/Animation/clips/WalkR.anim
 - Assets/HenryAssets/HenryBundle/VFX/HenryBazookaMuzzleFlash.prefab
+- Assets/JohnnyAssets/Animation/Anims/Idle.anim
 - Assets/HenryAssets/HenryBundle/Textures/texShotgun.png
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texSmoke.png
 - Assets/HenryAssets/HenryBundle/Icons/texBazookaOutIcon.png
@@ -275,6 +274,7 @@ Assets:
 - Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_03_BaseMap.png
 - Assets/JohnnyAssets/VFX/CardPop.prefab
 - Assets/HenryAssets/HenryBundle/VFX/ImpactHenryPunch.prefab
+- Assets/JohnnyAssets/Animation/Anims/RunR.anim
 - Assets/JohnnyAssets/Animation/clips/SprintL.anim
 - Assets/JohnnyAssets/Animation/Anims/Jump.anim
 - Assets/HenryAssets/HenryBundle/Materials/matBazooka.mat
@@ -290,6 +290,7 @@ Assets:
 - Assets/HenryAssets/HenryBundle/Icons/texGrandMasteryAchievement.png
 - Assets/HenryAssets/HenryBundle/Textures/texHenryNeo.png
 - Assets/HenryAssets/HenryBundle/Icons/texVergilAchievement.png
+- Assets/JohnnyAssets/Animation/Anims/RunL.anim
 - Assets/HenryAssets/HenryBundle/Animation/maskBandana.mask
 - Assets/HenryAssets/HenryBundle/VFX/HenryFistSwingEffect.prefab
 - Assets/JohnnyAssets/Animation/Anims/Swing2.anim
@@ -326,6 +327,7 @@ Assets:
 - Assets/JohnnyAssets/VFX/Material/cardFlash.mat
 - Assets/HenryAssets/HenryBundle/Animation/clips/AimYaw.anim
 - Assets/HenryAssets/HenryBundle/Mesh/meshHenrySword.mesh
+- Assets/JohnnyAssets/Animation/Anims/RunB.anim
 - Assets/HenryAssets/HenryBundle/Icons/texDanteAchievement.png
 - Assets/JohnnyAssets/FBX/RoR_Johnny_Anims.fbx
 - Assets/JohnnyAssets/Materials/mtrlJohnSoft.mat
@@ -342,6 +344,7 @@ Assets:
 - Assets/HenryAssets/HenryBundle/VFX/JohnnyFistSwingEffect.prefab
 - Assets/HenryAssets/HenryBundle/Animation/clips/Idle.anim
 - Assets/HenryAssets/HenryBundle/Animation/clips/WalkB.anim
+- Assets/JohnnyAssets/Animation/Anims/Jump2.anim
 - Assets/HenryAssets/HenryBundle/Mesh/meshRebellion.mesh
 - Assets/HenryAssets/HenryBundle/Animation/animHenryMenu.controller
 - Assets/JohnnyAssets/VFX/sheathPop.prefab
@@ -360,7 +363,7 @@ Assets:
 - Assets/HenryAssets/HenryBundle/Materials/matBoxingGlove.mat
 - Assets/JohnnyAssets/UI/JohnnyTensionGauge.prefab
 - Assets/JohnnyAssets/VFX/Material/cardSlashinhg.mat
-- Assets/JohnnyAssets/Animation/Anims/RunF.anim
+- Assets/JohnnyAssets/Animation/Anims/MFWalkL.anim
 - Assets/JohnnyAssets/Animation/clips/WalkR.anim
 - Assets/JohnnyAssets/Animation/clips/Idle.anim
 - Assets/HenryAssets/HenryBundle/Mesh/MeshHenryGun.mesh
@@ -381,7 +384,7 @@ Assets:
 - Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_01_Normal.png
 - Assets/JohnnyAssets/VFX/Material/RC/RCWind.mat
 - Assets/JohnnyAssets/VFX/Material/RC/clock_hari.tga
-- Assets/JohnnyAssets/VFX/Material/matSmoke 1.mat
+- Assets/JohnnyAssets/Animation/Anims/CSS_Loop.anim
 - Assets/HenryAssets/HenryBundle/VFX/JohnnyBazookaMuzzleFlash.prefab
 - Assets/HenryAssets/HenryBundle/Materials/matHenry.mat
 - Assets/JohnnyAssets/Animation/Anims/AimYaw.anim
@@ -389,11 +392,12 @@ Assets:
 - Assets/HenryAssets/HenryBundle/Textures/texHenryVergil.png
 - Assets/JohnnyAssets/Animation/Anims/REF.anim
 - Assets/HenryAssets/HenryBundle/Animation/clips/Roll.anim
-- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_Normal.png
+- Assets/JohnnyAssets/Animation/Anims/MFWalkF.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matPunchImpactShadow.mat
 - Assets/JohnnyAssets/Animation/clips/ThrowBomb.anim
-- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_MaskMap.png
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_Normal.png
 - Assets/HenryAssets/HenryBundle/Icons/texShotgunIcon.png
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_MaskMap.png
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texFistSwing.png
 - Assets/JohnnyAssets/VFX/Material/xrd/circle_kira01.tga
 - Assets/HenryAssets/HenryBundle/Mesh/meshYamato.mesh
@@ -412,19 +416,20 @@ Assets:
 - Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_02_BaseMap.png
 - Assets/HenryAssets/HenryBundle/Animation/maskAimBazooka.mask
 - Assets/JohnnyAssets/Animation/clips/Roll.anim
-- Assets/JohnnyAssets/VFX/Material/sheathPop.mat
+- Assets/JohnnyAssets/VFX/Material/matSmoke 1.mat
 - Assets/JohnnyAssets/VFX/Material/xrd/lineanim04.tga
 - Assets/JohnnyAssets/Animation/maskImpact.mask
 - Assets/JohnnyAssets/Animation/clips/LightImpact.anim
 - Assets/JohnnyAssets/Animation/clips/IdleAdditive.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matRipple.mat
-- Assets/JohnnyAssets/Prefabs/JohnCardWhite EVIL.prefab
+- Assets/JohnnyAssets/Animation/Anims/RunF.anim
 - Assets/HenryAssets/HenryBundle/Materials/matJohnnyNeo.mat
 - Assets/HenryAssets/HenryBundle/Animation/maskAimPitch.mask
-- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_MaskMap.png
+- Assets/JohnnyAssets/Prefabs/JohnCardWhite EVIL.prefab
 - Assets/JohnnyAssets/Materials/JohnnyCardWhite.mat
 - Assets/JohnnyAssets/Animation/clips/AimYaw.anim
 - Assets/JohnnyAssets/Animation/clips/DefaultPose.anim
+- Assets/JohnnyAssets/Textures/JohnnyMTRL/Mastery/ROR_Johnny_Johnny_02_MaskMap.png
 - Assets/HenryAssets/HenryBundle/Materials/matVergil.mat
 - Assets/JohnnyAssets/Animation/Anims/Swing3.anim
 - Assets/HenryAssets/HenryBundle/VFX/JohnnyDustEffect.prefab
@@ -432,6 +437,7 @@ Assets:
 - Assets/HenryAssets/HenryBundle/Materials/matJohnny.mat
 - Assets/HenryAssets/HenryBundle/Animation/clips/SprintL.anim
 - Assets/HenryAssets/HenryBundle/VFX/Materials/matAnimeShapes.mat
+- Assets/JohnnyAssets/VFX/Material/sheathPop.mat
 - Assets/JohnnyAssets/VFX/Material/cardFlashbang.mat
 - Assets/JohnnyAssets/Animation/Anims/LightImpact.anim
 - Assets/JohnnyAssets/Textures/JohnnyMTRL/ROR_Johnny_Johnny_03_MaskMap.png
@@ -449,9 +455,10 @@ Assets:
 - Assets/JohnnyAssets/Animation/Anims/Deal.anim
 - Assets/JohnnyAssets/Prefabs/JohnCardWhiteGhost.prefab
 - Assets/HenryAssets/HenryBundle/Animation/maskGesture.mask
-- Assets/JohnnyAssets/VFX/Material/xrd/circle_kira02.tga
+- Assets/JohnnyAssets/Animation/Anims/MFWalkB.anim
 - Assets/HenryAssets/HenryBundle/Animation/clips/MenuIdleIn.anim
 - Assets/JohnnyAssets/Prefabs/JohnCardWhite.prefab
+- Assets/JohnnyAssets/VFX/Material/xrd/circle_kira02.tga
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texHenrySwing2.png
 - Assets/HenryAssets/HenryBundle/Materials/matRoy.mat
 - Assets/HenryAssets/HenryBundle/VFX/JohnnyBazookaExplosionEffect.prefab
@@ -460,8 +467,8 @@ Assets:
 - Assets/JohnnyAssets/Textures/UI/texCrosshairRailgunSniperNib.png
 - Assets/HenryAssets/HenryBundle/VFX/Textures/texRipple.png
 - Assets/HenryAssets/HenryBundle/Materials/matHenryJedi.mat
+- Assets/JohnnyAssets/Animation/maskUpperBody.mask
 - Assets/HenryAssets/HenryBundle/VFX/HenryBazookaExplosionEffect.prefab
-- Assets/JohnnyAssets/Animation/Anims/CSS_Loop.anim
 - Assets/JohnnyAssets/VFX/Material/RC/RCClock_hand.mat
 - Assets/HenryAssets/HenryBundle/VFX/HenrySwordSwingEffect.prefab
 - Assets/JohnnyAssets/VFX/mistFinerEffect.prefab

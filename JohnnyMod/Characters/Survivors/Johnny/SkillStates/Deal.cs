@@ -15,6 +15,8 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
         private bool hasFired = false;
         private Ray aimRay;
 
+        private ChildLocator childLoc;
+
         public override void OnEnter()
         {
             base.OnEnter();
@@ -23,6 +25,12 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             aimRay = GetAimRay();
 
             Util.PlaySound("PlayDeal", gameObject);
+
+            childLoc = GetModelChildLocator();
+            childLoc.FindChild("GhostHilt").gameObject.SetActive(true);
+            childLoc.FindChild("KatanaHilt").gameObject.SetActive(false);
+            childLoc.FindChild("KatanaBlade").gameObject.SetActive(false);
+            childLoc.FindChild("SwordSimp").gameObject.SetActive(false);
 
             PlayAnimation("Gesture, Override", "Deal", "Deal.playbackRate", this.duration);
             //this is only existing so i can do the ammend thing
@@ -63,6 +71,13 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
 
                 ProjectileManager.instance.FireProjectile(CardInfo);
             }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+
+            childLoc.FindChild("GhostHilt").gameObject.SetActive(true);
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()

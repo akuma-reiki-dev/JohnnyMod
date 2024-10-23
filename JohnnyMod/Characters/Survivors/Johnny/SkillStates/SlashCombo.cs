@@ -6,6 +6,8 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
 {
     public class SlashCombo : BaseMeleeAttack
     {
+        private ChildLocator childLoc;
+
         public override void OnEnter()
         {
             hitboxGroupName = "SwordGroup";
@@ -17,13 +19,19 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             bonusForce = Vector3.zero;
             baseDuration = 1f;
 
+            childLoc = GetModelChildLocator();
+            childLoc.FindChild("GhostHilt").gameObject.SetActive(false);
+            childLoc.FindChild("KatanaHilt").gameObject.SetActive(true);
+            childLoc.FindChild("KatanaBlade").gameObject.SetActive(true);
+            childLoc.FindChild("SwordSimp").gameObject.SetActive(true);
+
             //0-1 multiplier of baseduration, used to time when the hitbox is out (usually based on the run time of the animation)
             //for example, if attackStartPercentTime is 0.5, the attack will start hitting halfway through the ability. if baseduration is 3 seconds, the attack will start happening at 1.5 seconds
-            attackStartPercentTime = 0.2f;
-            attackEndPercentTime = 0.4f;
+            attackStartPercentTime = 0.6f;
+            attackEndPercentTime = 0.8f;
 
             //this is the point at which the attack can be interrupted by itself, continuing a combo
-            earlyExitPercentTime = 0.6f;
+            earlyExitPercentTime = 0.85f;
 
             hitStopDuration = 0.012f;
             attackRecoil = 0.5f;
@@ -41,7 +49,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
 
         protected override void PlayAttackAnimation()
         {
-            PlayCrossfade("Gesture, Override", "Swing" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
+            PlayCrossfade("UpperBody, Override", "Swing" + (1 + swingIndex), playbackRateParam, duration, 0.1f * duration);
         }
 
         protected override void PlaySwingEffect()
@@ -57,6 +65,11 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
         public override void OnExit()
         {
             base.OnExit();
+
+            childLoc.FindChild("GhostHilt").gameObject.SetActive(true);
+            childLoc.FindChild("KatanaHilt").gameObject.SetActive(false);
+            childLoc.FindChild("KatanaBlade").gameObject.SetActive(false);
+            childLoc.FindChild("SwordSimp").gameObject.SetActive(false);
         }
     }
 }
