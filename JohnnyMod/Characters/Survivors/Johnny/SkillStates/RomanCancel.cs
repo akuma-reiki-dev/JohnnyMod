@@ -14,6 +14,8 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
         private bool unsetPrevVel;
         private float duration;
 
+        private EntityState bodyState; //this exists so johnny doesnt fucking break his neck after roman cancelling
+
         public override void OnEnter()
         {
             base.OnEnter();
@@ -23,11 +25,17 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 EntityStateMachine Body = EntityStateMachine.FindByCustomName(gameObject, "Body");
                 EntityStateMachine Weap = EntityStateMachine.FindByCustomName(gameObject, "Weapon");
                 EntityStateMachine Weap2 = EntityStateMachine.FindByCustomName(gameObject, "Weapon2");
+                bodyState = Body.state;
+
+                bodyState.inputBank.skill1.PushState(false);
+                bodyState.inputBank.skill2.PushState(false);
+                bodyState.inputBank.skill4.PushState(false);
+
                 Body.SetState(new Idle());
                 Weap.SetState(new Idle());
                 Weap2.SetState(new Idle());
 
-                PlayAnimation("FullBody, Override", "RomanCancel");
+                PlayAnimation("RomanCancel, Override", "RomanCancel");
                 GetModelAnimator().Play("RomanCancel");
             }
 
@@ -61,7 +69,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 outer.SetNextState(new RomanIdle());
                 // we reset the Body ESM to JohnnyMainState. This is done because we can't exactly nullify the inputs through the secondary IdleState
                 EntityStateMachine Body = EntityStateMachine.FindByCustomName(gameObject, "Body");
-                Body.SetState(new JohnnyMainState());
+                Body.SetState(bodyState); // we have the state copied and stored here, tho we should probably drop the inputs
             }
         }
 
