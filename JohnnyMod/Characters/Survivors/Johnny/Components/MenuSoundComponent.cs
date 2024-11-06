@@ -15,7 +15,10 @@ namespace JohnnyMod.Survivors.Johnny.Components
         private IEnumerator MenuSound()
         {
             Util.PlaySound("PlaySelectNoise", gameObject);
+            yield return new WaitForSeconds(0.6f);
+            Util.PlaySound("PlayHatFlick", gameObject);
             yield return null;
+            //yield return null;
             //wait for 0.21/30 seconds
             //play landing sound
             //at 1.08 (0.87 later) play knife 2

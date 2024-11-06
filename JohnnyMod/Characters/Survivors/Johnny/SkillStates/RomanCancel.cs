@@ -52,7 +52,23 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
 
             if (NetworkServer.active)
             {
-                characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.15f);
+                characterBody.AddTimedBuff(RoR2Content.Buffs.HiddenInvincibility, 0.3f);
+
+                //this is the roman cancel burst back, to blow enemies away
+                BlastAttack explode = new BlastAttack();
+                explode.baseDamage = 0;
+                explode.baseForce = 15;
+                explode.radius = 7.5f;
+                explode.crit = false;
+                explode.procCoefficient = 0;
+                explode.attacker = gameObject;
+                explode.inflictor = gameObject;
+                explode.damageType = DamageType.NonLethal;
+                explode.damageColorIndex = DamageColorIndex.Default;
+                explode.teamIndex = gameObject.GetComponent<TeamComponent>().teamIndex;
+                explode.falloffModel = BlastAttack.FalloffModel.None;
+                explode.position = transform.position;
+                explode.Fire();
             }
         }
 

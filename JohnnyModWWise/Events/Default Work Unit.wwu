@@ -124,6 +124,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="PlayHatFlick" ID="{B13C60EE-D1F5-46EC-90F3-3FAB5DB79C91}">
+					<ChildrenList>
+						<Action Name="" ID="{B02D0780-6A93-4844-9948-376A4A22893D}" ShortID="1035113433">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SE_BTL_JHN_Entry_1P_01 Hat Flick" ID="{B5098FC0-EB3C-4E39-92FA-607C0E2D448C}" WorkUnitID="{934DA951-ED09-4FBF-851E-A6F0F04E08E4}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -37,7 +37,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             attackRecoil = 0.5f;
             hitHopVelocity = 4f;
 
-            swingSoundString = "JohnnySwordSwing";
+            swingSoundString = "Play_merc_sword_swing";
             hitSoundString = "";
             muzzleString = swingIndex % 2 == 0 ? "Swing1" : "Swing2";
             playbackRateParam = "Slash.playbackRate";
@@ -65,6 +65,8 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
         public override void OnExit()
         {
             base.OnExit();
+
+            //Util.PlaySound("PlaySheath", gameObject);
 
             childLoc.FindChild("GhostHilt").gameObject.SetActive(true);
             childLoc.FindChild("KatanaHilt").gameObject.SetActive(false);

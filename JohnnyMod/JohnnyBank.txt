@@ -8,6 +8,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2967634857	PlayLeap			\Default Work Unit\PlayLeap	
 	3023499623	PlayWinVoice			\Default Work Unit\PlayWinVoice	
 	3575152198	PlayMistFiner			\Default Work Unit\PlayMistFiner	
+	3763637867	PlayHatFlick			\Default Work Unit\PlayHatFlick	
 	3883459230	PlayCardPop			\Default Work Unit\PlayCardPop	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
@@ -33,6 +34,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	452917109	SE_BTL_JHN_04 Deal	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_04 Deal_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_04 Deal		4799
 	501115062	SE_BTL_JHN_01 Sheath	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_01 Sheath_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_01 Sheath		2696
 	502831786	SE_BTL_CMN_RC_Blue	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_CMN_RC_Blue_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_CMN_RC_Blue		18763
+	585405171	SE_BTL_JHN_Entry_1P_01 Hat Flick	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\SE_BTL_JHN_Entry_1P_01 Hat Flick_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\SFX\SE_BTL_JHN_Entry_1P_01 Hat Flick		13231
 	602182792	im perfect	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\im perfect_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\WinVoices\im perfect		56928
 	638523529	make it snappy	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\make it snappy_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\make it snappy		17490
 	685031763	takin a gamble	C:\Users\Bee_Snow\source\repos\JohnnyMod\JohnnyModWWise\.cache\Windows\SFX\takin a gamble_8E324C96.wem		\Actor-Mixer Hierarchy\Default Work Unit\MasterMixer\SFX Mixxer\ImportSounds\Voices\SelectVoices\takin a gamble		47359

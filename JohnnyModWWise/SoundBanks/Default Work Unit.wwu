@@ -8,6 +8,7 @@
 						<ObjectRef Name="PlayWinVoice" ID="{068FE060-2205-42BA-A409-9E0BBBF8AF3E}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlaySheath" ID="{08328C26-B807-461C-B7B9-413A054F7D9C}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayRC" ID="{09A463A6-A117-4638-8A15-485BF47CF9FC}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="PlayHatFlick" ID="{B13C60EE-D1F5-46EC-90F3-3FAB5DB79C91}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlaySelectNoise" ID="{A02C763B-23A0-4815-B493-75BD19392360}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayDeal" ID="{308CD471-8DA2-485E-B6AB-53BEF82D3DE1}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="PlayCoinFlip" ID="{13CC6978-6D6B-4AB2-BA2E-3E8A12F14F74}" WorkUnitID="{8321CDF1-47A5-4BD5-9466-0883DD25205F}" Origin="Manual" Filter="7"/>

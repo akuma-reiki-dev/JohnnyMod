@@ -239,7 +239,7 @@ namespace JohnnyMod.Survivors.Johnny
                 skillName = "JohnnyDash",
                 skillNameToken = Johnny_PREFIX + "PASSIVE_NAME",
                 skillDescriptionToken = Johnny_PREFIX + "PASSIVE_DESCRIPTION",
-                skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texSpecialIcon"), //texPassiveIcon
                 keywordTokens = new string[] { Johnny_PREFIX + "KEYWORD_TENSION", Johnny_PREFIX + "KEYWORD_STEPDASH", Johnny_PREFIX + "KEYWORD_RC" },
 
                 activationState = new EntityStates.SerializableEntityStateType(typeof(StepDash)),
@@ -467,7 +467,7 @@ namespace JohnnyMod.Survivors.Johnny
             #region MasterySkin
             
             SkinDef masterySkin = Modules.Skins.CreateSkinDef(Johnny_PREFIX + "MASTERY_SKIN_NAME",
-                assetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
+                assetBundle.LoadAsset<Sprite>("texMasterySkin"),
                 defaultRendererinfos,
                 prefabCharacterModel.gameObject,
                 JohnnyUnlockables.masterySkinUnlockableDef);

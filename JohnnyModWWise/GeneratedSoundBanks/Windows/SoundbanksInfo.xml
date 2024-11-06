@@ -27,7 +27,7 @@
 				<GameParameter Id="3695994288" Name="Volume_Master"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="4059305719" Type="User" Language="SFX" Hash="{BAFA28EB-050E-DB58-8203-E20D1B5E28DE}">
+		<SoundBank Id="4059305719" Type="User" Language="SFX" Hash="{BB26EAA3-730B-398E-513D-5972748C09BE}">
 			<ShortName>JohnnyBank</ShortName>
 			<Path>JohnnyBank.bnk</Path>
 			<Media>
@@ -70,6 +70,10 @@
 				<File Id="502831786" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SE_BTL_CMN_RC_Blue.wav</ShortName>
 					<CachePath>SFX/SE_BTL_CMN_RC_Blue_8E324C96.wem</CachePath>
+				</File>
+				<File Id="585405171" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SE_BTL_JHN_Entry_1P_01 Hat Flick.wav</ShortName>
+					<CachePath>SFX/SE_BTL_JHN_Entry_1P_01 Hat Flick_8E324C96.wem</CachePath>
 				</File>
 				<File Id="602182792" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>im perfect.wav</ShortName>
@@ -131,6 +135,11 @@
 				<Event Id="662274973" Name="PlayDeal">
 					<MediaRefs>
 						<MediaRef Id="452917109"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3763637867" Name="PlayHatFlick">
+					<MediaRefs>
+						<MediaRef Id="585405171"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2967634857" Name="PlayLeap">
@@ -200,5 +209,5 @@
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{ADC65056-D7F4-481B-A532-6C6E791AA121}</FileHash>
+	<FileHash>{68AFA808-7965-6F6D-8A21-576F02E3166D}</FileHash>
 </SoundBanksInfo>

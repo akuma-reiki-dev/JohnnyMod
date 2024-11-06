@@ -41,6 +41,10 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
                 hbg.hurtBoxesDeactivatorCounter = hbDeactivatorCounter;
             }
             this.blinkVector = this.GetBlinkVector();
+
+            Util.PlaySound("Play_huntress_shift_start", gameObject);
+
+            PlayAnimation("UpperBody, Override", "MistFinerLoop");
         }
 
         public override void FixedUpdate()
@@ -78,6 +82,8 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             {
                 base.skillLocator.utility.UnsetSkillOverride(gameObject, JohnnyStaticValues.MistFinerDash, GenericSkill.SkillOverridePriority.Contextual);
             }
+
+            Util.PlaySound("Play_huntress_shift_end", gameObject);
 
             GetModelAnimator().SetBool("MistFiner.channeled", false);
             base.OnExit();

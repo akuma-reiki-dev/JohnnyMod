@@ -71,6 +71,7 @@ namespace JohnnyMod.Survivors.Johnny
 
             swordSwingEffect = _assetBundle.LoadEffect("JohnnySwordSwingEffect", true);
             swordHitImpactEffect = _assetBundle.LoadEffect("ImpactJohnnySlash");
+
             cardPopEffect = _assetBundle.LoadEffect("CardPop");
             mistFinerZap = _assetBundle.LoadEffect("mistFinerEffect");
             mistFinerZap2 = _assetBundle.LoadEffect("mistFinerEffectLvl2");

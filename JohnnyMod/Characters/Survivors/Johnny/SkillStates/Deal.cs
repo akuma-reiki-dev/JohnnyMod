@@ -76,8 +76,6 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
         public override void OnExit()
         {
             base.OnExit();
-
-            childLoc.FindChild("GhostHilt").gameObject.SetActive(true);
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
