@@ -17,7 +17,7 @@ namespace JohnnyMod.Survivors.Johnny.SkillStates
             procCoefficient = 1f;
             pushForce = 300f;
             bonusForce = Vector3.zero;
-            baseDuration = 1f;
+            baseDuration = 0.7f;
 
             childLoc = GetModelChildLocator();
             childLoc.FindChild("GhostHilt").gameObject.SetActive(false);
